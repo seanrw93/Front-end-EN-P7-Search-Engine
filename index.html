@@ -3,11 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <title>Document</title>
+    <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./node_modules/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+    <title>Les Petits Plats</title>
 </head>
-<body>
+<body class="py-3">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-light">
+        <div class="container-xl d-flex justify-content-center">
+            <div class="row w-100"> 
+                <!-- First Row: Logo -->
+                <div class="col-12 d-flex justify-content-center">
+                    <a class="navbar-brand" href="#">
+                        <img class="img-fluid" src="./assets/images/logo.svg" alt="Logo">
+                    </a>
+                </div>
+                <!-- Second Row: Search Bar -->
+                <div class="col-12 ">
+                    <form class="w-100">
+                        <input type="text" class="form-control bg-secondary-subtle border-right-0 py-3" placeholder="Search an ingredient, device, ustensil or a recipe" aria-label="Search recipe">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+
+    <!-- Filters -->
+    <section class="container-xl my-md-4 my-sm-2 px-4">
+        <div class="row">
+            <div class="col-12">
+                <div class="btn-group">
+                    <button class="btn btn-primary dropdown-toggle py-3" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Ingredients
+                    </button>
+                    <ul class="dropdown-menu bg-primary text-white" id="dropdownMenu1" aria-labelledby="dropdownMenuButton1" role="menu">
+                        <!-- Search input -->
+                        <li class="search-input">
+                            <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                        </li>
+                        
+                        <!-- Ingredients list -->
+                        <li><a class="dropdown-item" href="#" role="menuitem">Action</a></li>
+                        <li><a class="dropdown-item" href="#" role="menuitem">Another action</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#" role="menuitem">Something else here</a></li>
+                    </ul>
+                </div>
+                <div class="btn-group">
+                    <button class="btn btn-success dropdown-toggle py-3" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Device
+                    </button>
+
+                    <ul class="dropdown-menu bg-success" id="dropdownMenu2" aria-labelledby="dropdownMenuButton2" role="menu">
+                        <!-- Search input -->
+                        <li class="search-input">
+                            <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                        </li>
+
+                        <!-- Devices list -->
+                        <li><a class="dropdown-item" href="#" role="menuitem">Action</a></li>
+                        <li><a class="dropdown-item" href="#" role="menuitem">Another action</a></li>
+                        <li><a class="dropdown-item" href="#" role="menuitem">Something else here</a></li>
+                    </ul>
+                </div>
+                <div class="btn-group">
+                    <button class="btn btn-danger dropdown-toggle py-3" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Utensils
+                    </button>
+
+                    <ul class="dropdown-menu bg-danger text-white" id="dropdownMenu2" aria-labelledby="dropdownMenuButton2" role="menu">
+                        <!-- Search input -->
+                        <li class="search-input">
+                            <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                        </li>
+                        <!-- Utensils list -->
+                        <li><a class="dropdown-item" href="#" role="menuitem">Action</a></li>
+                        <li><a class="dropdown-item" href="#" role="menuitem">Another action</a></li>
+                        <li><a class="dropdown-item" href="#" role="menuitem">Something else here</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>      
+    </section>
     
+    <!-- Dynamic recipe cards -->
+    <section class="container-xl mt-5">
+        <div class="row" id="dynamicRow">
+            <div class="col-sm-12 col-md-6 col-lg-4" id="col1"></div>
+            <div class="col-sm-12 col-md-6 col-lg-4" id="col2"></div>
+            <div class="col-sm-12 col-md-6 col-lg-4" id="col3"></div>
+        </div>
+    </section>
+
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
