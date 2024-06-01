@@ -1,0 +1,26 @@
+
+.dropdown-toggle::after {
+    transition: transform 0.3s ease;
+  }
+  
+  .dropdown-toggle[aria-expanded="true"]::after {
+    transform: rotate(180deg);
+  }
+
+
+.custom-input {
+    &--primary {
+        @include dropdown-input-style($primary);
+    }
+    &--success {
+        @include dropdown-input-style($success);
+    }
+    &--danger {
+        @include dropdown-input-style($danger);
+    }
+}
+
+.custom-grid {
+    @include custom-grid(3, 2, 1);
+}
+

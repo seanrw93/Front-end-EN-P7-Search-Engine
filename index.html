@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/styles.css" rel="stylesheet">
     <link href="./node_modules/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
     <title>Les Petits Plats</title>
 </head>
@@ -39,62 +39,250 @@
                     <button class="btn btn-primary dropdown-toggle py-3" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Ingredients
                     </button>
-                    <ul class="dropdown-menu bg-primary text-white" id="dropdownMenu1" aria-labelledby="dropdownMenuButton1" role="menu">
-                        <!-- Search input -->
-                        <li class="search-input">
-                            <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-                        </li>
-                        
-                        <!-- Ingredients list -->
-                        <li><a class="dropdown-item" href="#" role="menuitem">Action</a></li>
-                        <li><a class="dropdown-item" href="#" role="menuitem">Another action</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#" role="menuitem">Something else here</a></li>
+                
+                    <ul class="dropdown-menu bg-primary p-2" id="dropdownMenu1" aria-labelledby="dropdownMenuButton1" role="menu" style="width: 600px;"> <!-- Adjust width as needed -->
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-12">
+                                    <li class="search-input">
+                                        <input class="form-control fw-bold custom-input--primary" type="search" placeholder="Search an ingredient" aria-label="Search">
+                                    </li>
+                                </div>
+                            </div>
+                
+                            <div class="row">
+                                <div class="col-12 cod-md-4 col-lg-6">
+                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Action</a></li>
+                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Another action</a></li>
+                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Something else here</a></li>
+                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Action</a></li>
+                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Another action</a></li>
+                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Something else here</a></li>
+                                </div>
+                                <div class="col-12 cod-md-4 col-lg-6">
+                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Action</a></li>
+                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Another action</a></li>
+                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Something else here</a></li>
+                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Action</a></li>
+                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Another action</a></li>
+                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Something else here</a></li>
+                                </div>
+                                <div class="col cod-md-4 col-lg-6">
+                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Action</a></li>
+                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Another action</a></li>
+                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Something else here</a></li>
+                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Action</a></li>
+                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Another action</a></li>
+                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Something else here</a></li>
+                                </div>
+                            </div>
+                        </div>
                     </ul>
                 </div>
+                
+
                 <div class="btn-group">
                     <button class="btn btn-success dropdown-toggle py-3" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Device
                     </button>
-
-                    <ul class="dropdown-menu bg-success" id="dropdownMenu2" aria-labelledby="dropdownMenuButton2" role="menu">
-                        <!-- Search input -->
-                        <li class="search-input">
-                            <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-                        </li>
-
-                        <!-- Devices list -->
-                        <li><a class="dropdown-item" href="#" role="menuitem">Action</a></li>
-                        <li><a class="dropdown-item" href="#" role="menuitem">Another action</a></li>
-                        <li><a class="dropdown-item" href="#" role="menuitem">Something else here</a></li>
+                
+                    <ul class="dropdown-menu bg-success text-white p-2" id="dropdownMenu2" aria-labelledby="dropdownMenuButton2" role="menu" style="width: 600px;"> <!-- Adjust width as needed -->
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-12">
+                                    <li class="search-input">
+                                        <input class="form-control custom-input--success" type="search" placeholder="Search" aria-label="Search">
+                                    </li>
+                                </div>
+                            </div>
+                
+                            <div class="row">
+                                <div class="col-12 cod-md-4 col-lg-6">
+                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Action</a></li>
+                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Another action</a></li>
+                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Something else here</a></li>
+                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Action</a></li>
+                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Another action</a></li>
+                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Something else here</a></li>
+                                </div>
+                                <div class="col-12 cod-md-4 col-lg-6">
+                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Action</a></li>
+                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Another action</a></li>
+                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Something else here</a></li>
+                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Action</a></li>
+                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Another action</a></li>
+                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Something else here</a></li>
+                                </div>
+                                <div class="col cod-md-4 col-lg-6">
+                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Action</a></li>
+                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Another action</a></li>
+                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Something else here</a></li>
+                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Action</a></li>
+                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Another action</a></li>
+                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Something else here</a></li>
+                                </div>
+                            </div>
+                        </div>
                     </ul>
                 </div>
+
                 <div class="btn-group">
-                    <button class="btn btn-danger dropdown-toggle py-3" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <button class="btn btn-danger dropdown-toggle py-3" type="button" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Utensils
                     </button>
-
-                    <ul class="dropdown-menu bg-danger text-white" id="dropdownMenu2" aria-labelledby="dropdownMenuButton2" role="menu">
-                        <!-- Search input -->
-                        <li class="search-input">
-                            <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-                        </li>
-                        <!-- Utensils list -->
-                        <li><a class="dropdown-item" href="#" role="menuitem">Action</a></li>
-                        <li><a class="dropdown-item" href="#" role="menuitem">Another action</a></li>
-                        <li><a class="dropdown-item" href="#" role="menuitem">Something else here</a></li>
+                
+                    <ul class="dropdown-menu bg-danger text-white p-2" id="dropdownMenu3" aria-labelledby="dropdownMenuButton3" role="menu" style="width: 600px;"> <!-- Adjust width as needed -->
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-12">
+                                    <li class="search-input">
+                                        <input class="form-control custom-input--danger" type="search" placeholder="Search" aria-label="Search">
+                                    </li>
+                                </div>
+                            </div>
+                
+                            <div class="row">
+                                <div class="col-12 cod-md-4 col-lg-6">
+                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Action</a></li>
+                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Another action</a></li>
+                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Something else here</a></li>
+                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Action</a></li>
+                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Another action</a></li>
+                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Something else here</a></li>
+                                </div>
+                                <div class="col-12 cod-md-4 col-lg-6">
+                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Action</a></li>
+                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Another action</a></li>
+                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Something else here</a></li>
+                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Action</a></li>
+                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Another action</a></li>
+                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Something else here</a></li>
+                                </div>
+                                <div class="col cod-md-4 col-lg-6">
+                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Action</a></li>
+                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Another action</a></li>
+                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Something else here</a></li>
+                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Action</a></li>
+                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Another action</a></li>
+                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Something else here</a></li>
+                                </div>
+                            </div>
+                        </div>
                     </ul>
                 </div>
+                
             </div>
         </div>      
     </section>
     
     <!-- Dynamic recipe cards -->
-    <section class="container-xl mt-5">
+    <section class="container-xl mt-5 px-4">
         <div class="row" id="dynamicRow">
-            <div class="col-sm-12 col-md-6 col-lg-4" id="col1"></div>
-            <div class="col-sm-12 col-md-6 col-lg-4" id="col2"></div>
-            <div class="col-sm-12 col-md-6 col-lg-4" id="col3"></div>
+            <div class="col-sm-12 col-md-6 col-lg-4" id="col1">
+                <div class="card p-0">
+                    <div style="background-color: grey; height: 200px;"></div>
+                    <div class="card-body bg-secondary-subtle">
+                      <div class="row justify-content-between">
+                            <h5 class="card-title">Tahitian raw fish</h5>
+                            <p class="card-text"><span class="oi oi-clock"></span> 60 min</p>
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                            <ul class="list-unstyled px-0">
+                                <li class="text-muted small">Tuna: 200g</li>
+                                <li class="text-muted small">Tomato: 2</li>
+                                <li class="text-muted small">Cucumber: 1</li>
+                                <li class="text-muted small">Carrot: 1</li>
+                                <li class="text-muted small">Lime: 0.5</li>
+                                <li class="text-muted small">Coconut milk: 100ml</li>
+                            </ul>
+                        </div>
+                        <div class="col">
+                            <p class="small">Dice the tuna, place it in a dish, and cover it with lime juice (in a shallow dish). Leave it to rest in the refrigerator for at least 2 hours...</p>
+                        </div>
+                      </div>
+                    </div>
+                </div> 
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4" id="col2">
+                <div class="card p-0">
+                    <div style="background-color: grey; height: 200px;"></div>
+                    <div class="card-body bg-secondary-subtle">
+                      <div class="row justify-content-between">
+                            <h5 class="card-title">Tahitian raw fish</h5>
+                            <p class="card-text"><span class="oi oi-clock"></span> 60 min</p>
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                            <ul class="list-unstyled px-0">
+                                <li class="text-muted small">Tuna: 200g</li>
+                                <li class="text-muted small">Tomato: 2</li>
+                                <li class="text-muted small">Cucumber: 1</li>
+                                <li class="text-muted small">Carrot: 1</li>
+                                <li class="text-muted small">Lime: 0.5</li>
+                                <li class="text-muted small">Coconut milk: 100ml</li>
+                            </ul>
+                        </div>
+                        <div class="col">
+                            <p class="small">Dice the tuna, place it in a dish, and cover it with lime juice (in a shallow dish). Leave it to rest in the refrigerator for at least 2 hours...</p>
+                        </div>
+                      </div>
+                    </div>
+                </div> 
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4" id="col3">            
+                <div class="card p-0">
+                <div style="background-color: grey; height: 200px;"></div>
+                <div class="card-body bg-secondary-subtle">
+                  <div class="row justify-content-between">
+                        <h5 class="card-title">Tahitian raw fish</h5>
+                        <p class="card-text"><span class="oi oi-clock"></span> 60 min</p>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                        <ul class="list-unstyled px-0">
+                            <li class="text-muted small">Tuna: 200g</li>
+                            <li class="text-muted small">Tomato: 2</li>
+                            <li class="text-muted small">Cucumber: 1</li>
+                            <li class="text-muted small">Carrot: 1</li>
+                            <li class="text-muted small">Lime: 0.5</li>
+                            <li class="text-muted small">Coconut milk: 100ml</li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <p class="small">Dice the tuna, place it in a dish, and cover it with lime juice (in a shallow dish). Leave it to rest in the refrigerator for at least 2 hours...</p>
+                    </div>
+                  </div>
+                </div>
+            </div> 
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-4" id="col3">            
+                <div class="card p-0">
+                <div style="background-color: grey; height: 200px;"></div>
+                <div class="card-body bg-secondary-subtle">
+                  <div class="row justify-content-between">
+                        <h5 class="card-title">Tahitian raw fish</h5>
+                        <p class="card-text"><span class="oi oi-clock"></span> 60 min</p>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                        <ul class="list-unstyled px-0">
+                            <li class="text-muted small">Tuna: 200g</li>
+                            <li class="text-muted small">Tomato: 2</li>
+                            <li class="text-muted small">Cucumber: 1</li>
+                            <li class="text-muted small">Carrot: 1</li>
+                            <li class="text-muted small">Lime: 0.5</li>
+                            <li class="text-muted small">Coconut milk: 100ml</li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <p class="small">Dice the tuna, place it in a dish, and cover it with lime juice (in a shallow dish). Leave it to rest in the refrigerator for at least 2 hours...</p>
+                    </div>
+                  </div>
+                </div>
+            </div> 
+            </div>
+    
         </div>
     </section>
 

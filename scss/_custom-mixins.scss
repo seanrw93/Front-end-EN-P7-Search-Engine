@@ -1,0 +1,32 @@
+@mixin dropdown-input-style($color) {
+    background: $color;
+    border: 0;
+    border-bottom: 1px solid $light;
+    border-radius: 0;
+    
+    &::placeholder {
+        color: $light !important;
+    }
+
+    &:focus {
+        background: $color;
+        color: $light;
+        border-bottom: 2px solid $light;
+    }
+}
+
+@mixin custom-grid($desktop, $tablet, $mobile) {
+    display: grid;
+
+    @media (min-width: 1200px) {
+        grid-template-columns: repeat(auto-fit, minmax($desktop, 1fr));
+    }
+
+    @media (max-width: 1199px) and (min-width: 768px) {
+        grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    }
+
+    @media (max-width: 767px) {
+        grid-template-columns: repeat(auto-fit, minmax($mobile, 1fr));
+    }
+}
