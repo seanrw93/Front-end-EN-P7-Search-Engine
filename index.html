@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
     <link href="./node_modules/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
     <title>Les Petits Plats</title>
 </head>
@@ -19,9 +20,9 @@
                     </a>
                 </div>
                 <!-- Second Row: Search Bar -->
-                <div class="col">
+                <div class="col p-0">
                     <form class="w-100">
-                        <input type="text" class="form-control bg-secondary-subtle border-right-0 py-3" placeholder="Search an ingredient, device, ustensil or a recipe" aria-label="Search recipe">
+                        <input type="text" class="form-control bg-secondary-subtle py-3" placeholder="Search an ingredient, device, ustensil or a recipe" aria-label="Search recipe">
                     </form>
                 </div>
             </div>
@@ -34,142 +35,162 @@
     <section class="container-xl my-md-4 my-sm-2 px-4">
         <div class="row row-cols-1">
             <div class="col">
-                <div class="btn-group">
+
+                <!--Ingredients dropdown button & menu-->
+                <div class="btn-group my-1">
                     <button class="btn btn-primary dropdown-toggle py-3" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Ingredients
                     </button>
-                
-                    <ul class="dropdown-menu bg-primary p-2" id="dropdownMenu1" aria-labelledby="dropdownMenuButton1" role="menu" style="width: 600px;"> <!-- Adjust width as needed -->
-                        <div class="container-fluid">
+
+                    <div class="dropdown-menu bg-primary custom-dropdown-width p-2" id="dropdownMenu1" aria-labelledby="dropdownMenuButton1" role="menu"> <!-- Adjust width as needed -->
+                        <div class="container">
                             <div class="row row-cols-1">
                                 <div class="col">
-                                    <li class="search-input">
+                                    <div class="search-input">
                                         <input class="form-control fw-bold custom-input--primary" type="search" placeholder="Search an ingredient" aria-label="Search">
-                                    </li>
+                                    </div>
                                 </div>
                             </div>
                 
-                            <div class="row row-cols-12 row-cols-md-4 row-cols-lg-6">
+                            <div id="ingredients-list" class="row row-cols-2 row-cols-md-3 justify-content-between">
                                 <div class="col">
-                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Action</a></li>
-                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Another action</a></li>
-                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Something else here</a></li>
-                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Action</a></li>
-                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Another action</a></li>
-                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Something else here</a></li>
+                                    <a class="dropdown-item text-light px-0" href="#" role="menuitem">Action</a>
                                 </div>
                                 <div class="col">
-                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Action</a></li>
-                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Another action</a></li>
-                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Something else here</a></li>
-                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Action</a></li>
-                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Another action</a></li>
-                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Something else here</a></li>
+                                    <a class="dropdown-item text-light px-0" href="#" role="menuitem">Action</a>
                                 </div>
                                 <div class="col">
-                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Action</a></li>
-                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Another action</a></li>
-                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Something else here</a></li>
-                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Action</a></li>
-                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Another action</a></li>
-                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Something else here</a></li>
+                                    <a class="dropdown-item text-light px-0" href="#" role="menuitem">Action</a>
+                                </div>
+                                <div class="col">
+                                    <a class="dropdown-item text-light px-0" href="#" role="menuitem">Action</a>
+                                </div>
+                                <div class="col">
+                                    <a class="dropdown-item text-light px-0" href="#" role="menuitem">Action</a>
+                                </div>
+                                <div class="col">
+                                    <a class="dropdown-item text-light px-0" href="#" role="menuitem">Action</a>
+                                </div>
+                                <div class="col">
+                                    <a class="dropdown-item text-light px-0" href="#" role="menuitem">Action</a>
+                                </div>
+                                <div class="col">
+                                    <a class="dropdown-item text-light px-0" href="#" role="menuitem">Action</a>
+                                </div>
+                                <div class="col">
+                                    <a class="dropdown-item text-light px-0" href="#" role="menuitem">Action</a>
+                                </div>
+                                <div class="col">
+                                    <a class="dropdown-item text-light px-0" href="#" role="menuitem">Action</a>
                                 </div>
                             </div>
                         </div>
-                    </ul>
+                    </div>
                 </div>
                 
-
-                <div class="btn-group">
-                    <button class="btn btn-success dropdown-toggle py-3" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Device
+                <!--Devices dropdown button & menu-->
+                <div class="btn-group my-1">
+                    <button class="btn btn-success dropdown-toggle py-3" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Devices
                     </button>
                 
-                    <ul class="dropdown-menu bg-success text-white p-2" id="dropdownMenu2" aria-labelledby="dropdownMenuButton2" role="menu" style="width: 600px;"> <!-- Adjust width as needed -->
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-12">
-                                    <li class="search-input">
-                                        <input class="form-control custom-input--success" type="search" placeholder="Search" aria-label="Search">
-                                    </li>
+                    <div class="dropdown-menu bg-success custom-dropdown-width p-2" id="dropdownMenu2" aria-labelledby="dropdownMenuButton2" role="menu"> <!-- Adjust width as needed -->
+                        <div class="container">
+                            <div class="row row-cols-1">
+                                <div class="col">
+                                    <div class="search-input">
+                                        <input class="form-control fw-bold custom-input--success" type="search" placeholder="Search a device" aria-label="Search">
+                                    </div>
                                 </div>
                             </div>
                 
-                            <div class="row">
-                                <div class="col-12 cod-md-4 col-lg-6">
-                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Action</a></li>
-                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Another action</a></li>
-                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Something else here</a></li>
-                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Action</a></li>
-                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Another action</a></li>
-                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Something else here</a></li>
+                            <div id="devices-list" class="row row-cols-2 row-cols-lg-3 justify-content-between">
+                                <div class="col">
+                                    <a class="dropdown-item text-light px-0" href="#" role="menuitem">Action</a>
                                 </div>
-                                <div class="col-12 cod-md-4 col-lg-6">
-                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Action</a></li>
-                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Another action</a></li>
-                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Something else here</a></li>
-                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Action</a></li>
-                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Another action</a></li>
-                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Something else here</a></li>
+                                <div class="col">
+                                    <a class="dropdown-item text-light px-0" href="#" role="menuitem">Action</a>
                                 </div>
-                                <div class="col cod-md-4 col-lg-6">
-                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Action</a></li>
-                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Another action</a></li>
-                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Something else here</a></li>
-                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Action</a></li>
-                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Another action</a></li>
-                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Something else here</a></li>
+                                <div class="col">
+                                    <a class="dropdown-item text-light px-0" href="#" role="menuitem">Action</a>
+                                </div>
+                                <div class="col">
+                                    <a class="dropdown-item text-light px-0" href="#" role="menuitem">Action</a>
+                                </div>
+                                <div class="col">
+                                    <a class="dropdown-item text-light px-0" href="#" role="menuitem">Action</a>
+                                </div>
+                                <div class="col">
+                                    <a class="dropdown-item text-light px-0" href="#" role="menuitem">Action</a>
+                                </div>
+                                <div class="col">
+                                    <a class="dropdown-item text-light px-0" href="#" role="menuitem">Action</a>
+                                </div>
+                                <div class="col">
+                                    <a class="dropdown-item text-light px-0" href="#" role="menuitem">Action</a>
+                                </div>
+                                <div class="col">
+                                    <a class="dropdown-item text-light px-0" href="#" role="menuitem">Action</a>
+                                </div>
+                                <div class="col">
+                                    <a class="dropdown-item text-light px-0" href="#" role="menuitem">Action</a>
                                 </div>
                             </div>
                         </div>
-                    </ul>
+                    </div>
                 </div>
 
-                <div class="btn-group">
-                    <button class="btn btn-danger dropdown-toggle py-3" type="button" id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <!--Utensils dropdown button & menu-->
+                <div class="btn-group my-1">
+                    <button class="btn btn-danger dropdown-toggle py-3" type="button" id="dropdownMenuButton3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Utensils
                     </button>
-                
-                    <ul class="dropdown-menu bg-danger text-white p-2" id="dropdownMenu3" aria-labelledby="dropdownMenuButton3" role="menu" style="width: 600px;"> <!-- Adjust width as needed -->
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-12">
-                                    <li class="search-input">
-                                        <input class="form-control custom-input--danger" type="search" placeholder="Search" aria-label="Search">
-                                    </li>
+
+                    <div class="dropdown-menu bg-danger custom-dropdown-width p-2" id="dropdownMenu3" aria-labelledby="dropdownMenuButton3" role="menu"> <!-- Adjust width as needed -->
+                        <div class="container">
+                            <div class="row row-cols-1">
+                                <div class="col">
+                                    <div class="search-input">
+                                        <input class="form-control fw-bold custom-input--danger" type="search" placeholder="Search a utensil" aria-label="Search">
+                                    </div>
                                 </div>
                             </div>
                 
-                            <div class="row">
-                                <div class="col-12 cod-md-4 col-lg-6">
-                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Action</a></li>
-                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Another action</a></li>
-                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Something else here</a></li>
-                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Action</a></li>
-                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Another action</a></li>
-                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Something else here</a></li>
+                            <div id="utensils-list" class="row row-cols-2 row-cols-lg-3 justify-content-between">
+                                <div class="col">
+                                    <a class="dropdown-item text-light px-0" href="#" role="menuitem">Action</a>
                                 </div>
-                                <div class="col-12 cod-md-4 col-lg-6">
-                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Action</a></li>
-                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Another action</a></li>
-                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Something else here</a></li>
-                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Action</a></li>
-                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Another action</a></li>
-                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Something else here</a></li>
+                                <div class="col">
+                                    <a class="dropdown-item text-light px-0" href="#" role="menuitem">Action</a>
                                 </div>
-                                <div class="col cod-md-4 col-lg-6">
-                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Action</a></li>
-                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Another action</a></li>
-                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Something else here</a></li>
-                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Action</a></li>
-                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Another action</a></li>
-                                    <li><a class="dropdown-item text-light" href="#" role="menuitem">Something else here</a></li>
+                                <div class="col">
+                                    <a class="dropdown-item text-light px-0" href="#" role="menuitem">Action</a>
+                                </div>
+                                <div class="col">
+                                    <a class="dropdown-item text-light px-0" href="#" role="menuitem">Action</a>
+                                </div>
+                                <div class="col">
+                                    <a class="dropdown-item text-light px-0" href="#" role="menuitem">Action</a>
+                                </div>
+                                <div class="col">
+                                    <a class="dropdown-item text-light px-0" href="#" role="menuitem">Action</a>
+                                </div>
+                                <div class="col">
+                                    <a class="dropdown-item text-light px-0" href="#" role="menuitem">Action</a>
+                                </div>
+                                <div class="col">
+                                    <a class="dropdown-item text-light px-0" href="#" role="menuitem">Action</a>
+                                </div>
+                                <div class="col">
+                                    <a class="dropdown-item text-light px-0" href="#" role="menuitem">Action</a>
+                                </div>
+                                <div class="col">
+                                    <a class="dropdown-item text-light px-0" href="#" role="menuitem">Action</a>
                                 </div>
                             </div>
                         </div>
-                    </ul>
+                    </div>
                 </div>
-                
             </div>
         </div>      
     </section>

@@ -14,3 +14,9 @@
         border-bottom: 2px solid $light;
     }
 }
+
+@mixin dropdown-width($width, $min-width, $max-width) {
+    width: $width;
+    min-width: $min-width; 
+    max-width: $max-width;
+}

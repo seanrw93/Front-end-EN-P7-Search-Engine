@@ -1,12 +1,34 @@
+/* Custom styles START */
+.dropdown-toggle {
+    &::after {
+        transition: transform 0.3s ease;
+    }
+    &[aria-expanded="true"]::after {
+        transform: rotate(180deg);
+    }
+}
 
-.dropdown-toggle::after {
-    transition: transform 0.3s ease;
-  }
-  
-  .dropdown-toggle[aria-expanded="true"]::after {
-    transform: rotate(180deg);
-  }
 
+.dropdown-menu {
+    @media (max-width: 768px) {
+        &#dropdownMenu2 {
+            left: -124px
+        }
+        &#dropdownMenu3 {
+            left: -220px
+        }
+        
+        &.custom-dropdown-width {
+            @include dropdown-width(90vw, 200px, 800px);
+        }
+      }
+
+      @media (min-width: 769px) {
+        &.custom-dropdown-width {
+            @include dropdown-width(60vw, 200px, 600px);
+        }
+      }
+}
 
 .custom-input {
     &--primary {
@@ -19,4 +41,3 @@
         @include dropdown-input-style($danger);
     }
 }
-
