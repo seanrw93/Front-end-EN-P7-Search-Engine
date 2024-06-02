@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/styles.css">
-    <link href="./node_modules/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
     <title>Les Petits Plats</title>
 </head>
-<body class="py-3">
+<body class="py-3 px-0">
 
     <!-- Navbar -->
     <nav class="navbar navbar-light">
@@ -32,12 +31,52 @@
     <!-- Main Content -->
 
     <!-- Filters -->
-    <section class="container-xl my-md-4 my-sm-2 px-4">
-        <div class="row row-cols-1">
+    <section class="container-xl my-md-4 my-3">
+
+        <!-- Filters: Tags -->
+        <div class="row row-cols-lg-2 px-3">
+            <div class="col mb-md-2">
+                <button type="button filter-btn" class="btn btn-primary mb-2">
+                    <span class="small">Coco</span>
+                    <span class="badge">
+                        <i class="fa-regular fa-circle-xmark"></i>
+                    </span>
+                </button>
+                <button type="button filter-btn" class="btn btn-primary mb-2">
+                    <span class="small">
+                        Tomato
+                    </span>
+                    <span class="badge">
+                        <i class="fa-regular fa-circle-xmark"></i>
+                    </span>
+                </button>
+                <button type="button filter-btn" class="btn btn-success mb-2">
+                    <span class="small">
+                        Blender
+                    </span>
+                    <span class="badge">
+                        <i class="fa-regular fa-circle-xmark"></i>
+                    </span>
+                </button>
+                <button type="button filter-btn" class="btn btn-danger mb-2">
+                    <span class="small">
+                        Knife
+                    </span>
+                    <span class="badge">
+                        <i class="fa-regular fa-circle-xmark"></i>
+                    </span>
+                </button>
+            </div>
+        </div>
+
+        <hr class="d-md-none mx-3" />
+
+        <!-- Filters: Dropdowns -->
+        <div class="row row-cols-1 px-3">
             <div class="col">
 
                 <!--Ingredients dropdown button & menu-->
-                <div class="btn-group my-1">
+                <div class="btn-group">
                     <button class="btn btn-primary dropdown-toggle py-3" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Ingredients
                     </button>
@@ -306,6 +345,7 @@
         </div>
     </section>
 
+    <script src="https://kit.fontawesome.com/c9fd0cd478.js" crossorigin="anonymous"></script>
     <script src="dist/bundle.js"></script>
 </body>
 </html>

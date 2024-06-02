@@ -9241,6 +9241,7 @@ a.text-dark:hover, a.text-dark:focus {
   border: 0;
   border-bottom: 1px solid #f8f9fa;
   border-radius: 0;
+  padding-left: 0;
 }
 .custom-input--primary::placeholder {
   color: #f8f9fa !important;
@@ -9255,6 +9256,7 @@ a.text-dark:hover, a.text-dark:focus {
   border: 0;
   border-bottom: 1px solid #f8f9fa;
   border-radius: 0;
+  padding-left: 0;
 }
 .custom-input--success::placeholder {
   color: #f8f9fa !important;
@@ -9269,6 +9271,7 @@ a.text-dark:hover, a.text-dark:focus {
   border: 0;
   border-bottom: 1px solid #f8f9fa;
   border-radius: 0;
+  padding-left: 0;
 }
 .custom-input--danger::placeholder {
   color: #f8f9fa !important;

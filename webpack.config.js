@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = {
-  mode: 'development',
+  mode: 'development', // or 'production' depending on your build process
   entry: './src/app.js',
   output: {
     filename: 'bundle.js',
@@ -24,6 +24,7 @@ module.exports = {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
       },
+
     ],
   },
 };

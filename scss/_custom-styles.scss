@@ -17,7 +17,7 @@
         &#dropdownMenu3 {
             left: -220px
         }
-        
+
         &.custom-dropdown-width {
             @include dropdown-width(90vw, 200px, 800px);
         }
