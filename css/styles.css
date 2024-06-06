@@ -9208,6 +9208,20 @@ a.text-dark:hover, a.text-dark:focus {
   }
 }
 /* Custom styles START */
+.magnifying-glass-icon {
+  position: relative;
+}
+.magnifying-glass-icon::after {
+  content: "\f002";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #000;
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+}
+
 .dropdown-toggle::after {
   transition: transform 0.3s ease;
 }

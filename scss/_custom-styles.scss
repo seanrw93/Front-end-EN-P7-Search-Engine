@@ -1,4 +1,18 @@
 /* Custom styles START */
+.magnifying-glass-icon {
+    position: relative;
+        &::after {
+            content: "\f002";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            color: #000;
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+        }
+}
+
 .dropdown-toggle {
     &::after {
         transition: transform 0.3s ease;
