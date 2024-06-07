@@ -9296,4 +9296,24 @@ a.text-dark:hover, a.text-dark:focus {
   border-bottom: 2px solid #f8f9fa;
 }
 
+.extra-small {
+  font-size: 0.6rem;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.recipe__card {
+  max-height: 350px;
+  max-width: 350px;
+  margin: 0 auto;
+}
+.recipe__card .card-body > .row:last-of-type > .col:first-of-type {
+  flex: 2;
+}
+.recipe__card .card-body > .row:last-of-type > .col:last-of-type {
+  flex: 3;
+}
+
 /*# sourceMappingURL=styles.css.map */
