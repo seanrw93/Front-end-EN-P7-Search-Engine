@@ -57,13 +57,13 @@ export class Recipes {
         }).join('');
 
         return (`
-            <div class="col mb-3 mb-md-4 mb-lg-5" id="card-col-${this.id}">
-                <div id="recipe-card-${this.id}" class="card recipe__card border rounded">
-                    <div style="background-color: grey; height: 200px;"></div>
-                    <div class="card-body bg-light">
-                        <div class="row d-flex justify-content-between flex-nowrap mx-0">
-                            <h5 class="card-title h6">${this.name}</h5>
-                            <p class="card-text text-nowrap"><span class="fa far fa-clock"></span> ${this.time} min</p>
+            <div class="col mb-3 mb-md-4 mb-lg-5 rounded-lg" id="card-col-${this.id}">
+                <div id="recipe-card-${this.id}" class="card recipe__card rounded-lg">
+                    <img src="./assets/images/grey-background.svg" class="card-img-top" alt="Recipe image">
+                    <div class="card-body bg-secondary">
+                        <div class="row d-flex justify-content-between align-items-center flex-nowrap mx-0 mb-3">
+                            <h5 class="card-title h6 mb-0">${this.name}</h5>
+                            <p class="card-text text-nowrap font-weight-bold"><span class="fa far fa-clock"></span> ${this.time} min</p>
                         </div>
                         <div class="row">
                             <div class="col">
@@ -72,7 +72,7 @@ export class Recipes {
                                 </ul>
                             </div>
                             <div class="col">
-                                <p class="extra-small text-justify">${this.truncateString(this.description, 25)}</p>
+                                <p class="extra-small text-justify">${this.truncateString(this.description, 40)}</p>
                             </div>
                         </div>
                     </div>

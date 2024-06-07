@@ -13,6 +13,10 @@
         }
 }
 
+.btn-success > span {
+    color: $light;
+  }
+
 .dropdown-toggle {
     &::after {
         transition: transform 0.3s ease;
@@ -44,15 +48,9 @@
       }
 }
 
-.custom-input {
-    &--primary {
-        @include dropdown-input-style($primary);
-    }
-    &--success {
-        @include dropdown-input-style($success);
-    }
-    &--danger {
-        @include dropdown-input-style($danger);
+.search-input {
+    .custom-input {
+        @include dropdown-input-style();
     }
 }
 
@@ -66,7 +64,7 @@
 }
 
 .recipe__card {
-    max-height: 350px;
+    height: 340px;
     max-width: 350px;
     margin: 0 auto;
 

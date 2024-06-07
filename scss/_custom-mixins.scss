@@ -1,5 +1,6 @@
-@mixin dropdown-input-style($color) {
-    background: $color;
+@mixin dropdown-input-style() {
+    background-color: transparent;
+    color: $light;
     border: 0;
     border-bottom: 1px solid $light;
     border-radius: 0;
@@ -10,7 +11,7 @@
     }
 
     &:focus {
-        background: $color;
+        background-color: transparent;
         color: $light;
         border-bottom: 2px solid $light;
     }
