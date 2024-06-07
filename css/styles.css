@@ -9217,7 +9217,7 @@ a.text-dark:hover, a.text-dark:focus {
   font-weight: 900;
   color: #000;
   position: absolute;
-  top: 50%;
+  top: 60%;
   right: 10px;
   transform: translateY(-50%);
 }
@@ -9280,7 +9280,7 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .recipe__card {
-  height: 340px;
+  height: 345px;
   max-width: 350px;
   margin: 0 auto;
 }
