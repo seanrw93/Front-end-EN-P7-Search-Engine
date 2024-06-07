@@ -50,7 +50,6 @@ export class Recipes {
             return (`
                 <li class="text-muted extra-small recipe__ingredient">
                     <span class="font-weight-bold">${ingredient.ingredient}${ingredient.quantity ? ":" : ""}</span>
-
                     ${ingredient.quantity ? `${ingredient.quantity} ${ingredient.unit ? this.singularUnit(ingredient.quantity, this.convertUnit(ingredient.unit)) : ""}` : ""}
                 </li>
                 `

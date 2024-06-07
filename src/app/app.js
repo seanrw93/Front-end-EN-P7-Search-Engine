@@ -5,8 +5,6 @@ import '../../scss/main.scss';
 import { recipes } from '../data/recipes.js';
 import { Recipes } from './recipe-card.js';
 
-console.log('Hello World from Webpacker')
-
 async function getRecipes(id) {
     try {
         const data = { recipes };
@@ -32,7 +30,7 @@ async function displayCard(card) {
     card.forEach(item => {
         const cardFactory = new Recipes(item);
         const cardDOM = cardFactory.renderCard(); // Append mediaDOM to the container
-        recipeRow.insertAdjacentHTML("afterbegin", cardDOM); // Append container to the media section
+        recipeRow.insertAdjacentHTML("beforeend", cardDOM); // Append container to the media section
     });
 }
 
