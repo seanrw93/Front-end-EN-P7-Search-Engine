@@ -1,8 +1,8 @@
 # Les Petits Plats (Front-end-EN-P11-Search-Engine)
 
-A web application for searching recipes, ingredients, devices, and utensils.
+A web application for searching recipes
 
-Project 7 of the OpenClassrooms Javascript Developer with react course
+Project 7 of the OpenClassrooms Javascript Developer with React course
 
 ## Prerequisites
 
@@ -59,7 +59,7 @@ To create a production build of the project:
 
 - `src/`: Contains the source code
 - `dist/`: Contains the production build
-- `css/`: Contains custom stylesheets
+- `scss/`: Contains custom stylesheets
 - `assets/`: Contains images, fonts, and other static assets
 
 ## Custom Styles

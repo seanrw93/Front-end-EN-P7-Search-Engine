@@ -52,7 +52,7 @@ export class Recipes {
     renderCard() {
         const ingredientsList = this.ingredients.map(ingredient => {
             return (`
-                <li class="extra-small recipe__ingredient">
+                <li class="recipe__ingredient extra-small text-nowrap">
                     <span class="font-weight-bold">${ingredient.ingredient}${ingredient.quantity ? ":" : ""}</span>
                     ${ingredient.quantity ? `${ingredient.quantity} ${ingredient.unit ? this.singularUnit(ingredient.quantity, this.convertUnit(ingredient.unit)) : ""}` : ""}
                 </li>
@@ -76,7 +76,7 @@ export class Recipes {
                                 </ul>
                             </div>
                             <div class="col">
-                                <p class="extra-small text-justify">${this.truncateString(this.description, 40)}</p>
+                                <p class="extra-small text-justify">${this.truncateString(this.description, 30)}</p>
                             </div>
                         </div>
                     </div>

@@ -9272,7 +9272,7 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .extra-small {
-  font-size: 0.6rem;
+  font-size: 0.65rem;
 }
 
 .text-justify {
@@ -9282,6 +9282,7 @@ a.text-dark:hover, a.text-dark:focus {
 .recipe__card {
   height: 345px;
   max-width: 350px;
+  min-width: 320px;
   margin: 0 auto;
 }
 .recipe__card .card-body > .row:last-of-type > .col:first-of-type {
