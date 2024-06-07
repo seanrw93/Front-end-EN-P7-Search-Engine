@@ -34,16 +34,20 @@ export class Recipes {
         switch (unit.toLowerCase()) {
             case "grams":
                 return "g";
-            case `${"liters" || "liter"}`:
+            case "liters":
+            case "liter":
                 return "l";
             case "tablespoons":
+            case "tablespoon":
                 return "tbsps";
-            case "teaspoons": 
+            case "teaspoons":
+            case "teaspoon":
                 return "tsps";
             default:
                 return unit;
         }
     }
+    
 
     renderCard() {
         const ingredientsList = this.ingredients.map(ingredient => {
