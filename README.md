@@ -2,7 +2,7 @@
 
 A web application for searching recipes, ingredients, devices, and utensils.
 
-Project 7 of the OpenClassrooms Javascript Developer with reacht course
+Project 7 of the OpenClassrooms Javascript Developer with react course
 
 ## Prerequisites
 
@@ -16,8 +16,7 @@ Ensure you have the following installed on your local machine:
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/yourusername/les-petits-plats.git
-    cd les-petits-plats
+    git clone https://github.com/seanrw93/Front-end-EN-P7-Search-Engine.git
     ```
 
 2. **Install dependencies:**
