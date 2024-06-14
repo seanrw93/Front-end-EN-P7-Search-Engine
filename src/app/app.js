@@ -23,20 +23,47 @@ async function getRecipes(id) {
     }
 }
 
-async function displayCard(card) {
+function displayCard(card) {
     const recipeRow = document.querySelector("#recipe-row");
     recipeRow.innerHTML = ''; 
 
     card.forEach(item => {
         const cardFactory = new Recipes(item);
-        const cardDOM = cardFactory.renderCard(); // Append mediaDOM to the container
-        recipeRow.insertAdjacentHTML("beforeend", cardDOM); // Append container to the media section
+        const cardDOM = cardFactory.renderCard();
+        recipeRow.insertAdjacentHTML("beforeend", cardDOM);
     });
 }
 
+const searchInput = document.querySelector("#search-recipe");
+
+function searchRecipes() {
+    const searchValue = searchInput.value.toLowerCase();
+    if (searchValue.length >= 3) {
+        const filteredCards = recipes.filter((card) => {
+            // Split the name into words and check if any word starts with the search value
+            const nameWords = card.name.toLowerCase().split(" ");
+            const nameMatch = nameWords.some(word => word.startsWith(searchValue));
+
+            // Split the ingredients into words and check if any word starts with the search value
+            const ingredientMatch = card.ingredients.some(ingredient => {
+                const ingredientWords = ingredient.ingredient.toLowerCase().split(" ");
+                return ingredientWords.some(word => word.startsWith(searchValue));
+            });
+
+            return nameMatch || ingredientMatch;
+        });
+        displayCard(filteredCards);
+    } else {
+        displayCard(recipes);
+    }
+}
+
+
 async function init() {
-    const card = await getRecipes();
-    displayCard(card);
+    const cards = await getRecipes();
+    displayCard(cards);
+
+    searchInput.addEventListener("input", searchRecipes);
 };
 
 init();
