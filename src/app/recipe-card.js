@@ -4,14 +4,14 @@ export class Recipes {
             throw new Error('Data is undefined');
         }
 
-        const { id, name, ingredients, time, description, appliance, ustensils } = data;
+        const { id, name, ingredients, time, description, appliance, utensils } = data;
         this.id = id;
         this.name = name;
         this.ingredients = ingredients;
         this.time = time;
         this.description = description;
         this.appliance = appliance;
-        this.ustensils = ustensils;
+        this.utensils = utensils;
     }
 
     truncateString(str, num) {

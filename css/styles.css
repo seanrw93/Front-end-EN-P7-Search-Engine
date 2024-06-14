@@ -9233,24 +9233,31 @@ a.text-dark:hover, a.text-dark:focus {
   transform: rotate(180deg);
 }
 
+.dropdown-menu {
+  transform: none !important;
+}
 @media (max-width: 768px) {
-  .dropdown-menu#dropdownMenu2 {
-    left: -124px;
+  .dropdown-menu#dropdownMenu-appliances {
+    left: -128px !important;
   }
-  .dropdown-menu#dropdownMenu3 {
-    left: -220px;
+  .dropdown-menu#dropdownMenu-utensils {
+    left: -250px !important;
   }
-  .dropdown-menu.custom-dropdown-width {
+  .dropdown-menu.custom-dropdown-dimensions {
     width: 90vw;
     min-width: 200px;
     max-width: 800px;
+    overflow-y: scroll;
+    max-height: 50vh;
   }
 }
 @media (min-width: 769px) {
-  .dropdown-menu.custom-dropdown-width {
+  .dropdown-menu.custom-dropdown-dimensions {
     width: 60vw;
     min-width: 200px;
     max-width: 600px;
+    overflow-y: scroll;
+    max-height: 80vh;
   }
 }
 

@@ -4,6 +4,7 @@ import '../../scss/main.scss';
 
 import { recipes } from '../data/recipes.js';
 import { Recipes } from './recipe-card.js';
+import { Dropdown } from './dropdown-menu.js';
 
 async function getRecipes(id) {
     try {
@@ -22,6 +23,42 @@ async function getRecipes(id) {
         return null;
     }
 }
+
+
+//Dropdown menus
+
+function extractDropdownItems(recipes, key) {
+    const itemsSet = new Set();
+
+    recipes.forEach(recipe => {
+        if (key === 'ingredients') {
+            recipe.ingredients.forEach(ingredient => itemsSet.add(ingredient.ingredient));
+        } else if (key === 'appliance') {
+            itemsSet.add(recipe.appliance);
+        } else if (key === 'utensils') {
+            recipe.utensils.forEach(utensil => itemsSet.add(utensil));
+        }
+    });
+
+    return Array.from(itemsSet);
+}
+
+const uniqueIngredients = extractDropdownItems(recipes, 'ingredients');
+const uniqueAppliances = extractDropdownItems(recipes, 'appliance');
+const uniqueUtensils = extractDropdownItems(recipes, 'ustensils');
+
+const ingredientsDropdown = new Dropdown('ingredients', uniqueIngredients, 'primary');
+const appliancesDropdown = new Dropdown('Devices', uniqueAppliances, 'success');
+const utensilsDropdown = new Dropdown('utensils', uniqueUtensils, 'danger');
+
+function renderDropdowns() {
+    const dropdownsContainer = document.querySelector("#dropdowns");
+    dropdownsContainer.insertAdjacentHTML("beforeend", ingredientsDropdown.renderDropdown());
+    dropdownsContainer.insertAdjacentHTML("beforeend", appliancesDropdown.renderDropdown());
+    dropdownsContainer.insertAdjacentHTML("beforeend", utensilsDropdown.renderDropdown());
+}
+
+//End Dropdown menus
 
 function displayCard(card) {
     const recipeRow = document.querySelector("#recipe-row");
@@ -58,12 +95,31 @@ function searchRecipes() {
     }
 }
 
+function test() {
+        //TEST
+        const dropDownItems = document.querySelectorAll(".dropdown-item");
+        const tagsArray = [];
+    
+        dropDownItems.forEach((item) => {
+            item.addEventListener("click", (e) => {
+                const tagText = e.target.textContent;
+                tagsArray.push(tagText);
+            });
+        });
+    
+        console.log(tagsArray);
+        //END TEST
+}
+
 
 async function init() {
     const cards = await getRecipes();
+    renderDropdowns();
     displayCard(cards);
 
     searchInput.addEventListener("input", searchRecipes);
+    test();
+
 };
 
 init();

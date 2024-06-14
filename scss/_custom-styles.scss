@@ -28,22 +28,27 @@
 
 
 .dropdown-menu {
+    transform: none !important;
     @media (max-width: 768px) {
-        &#dropdownMenu2 {
-            left: -124px
+        &#dropdownMenu-appliances {
+            left: -128px !important;
         }
-        &#dropdownMenu3 {
-            left: -220px
+        &#dropdownMenu-utensils {
+            left: -250px !important;
         }
 
-        &.custom-dropdown-width {
+        &.custom-dropdown-dimensions {
             @include dropdown-width(90vw, 200px, 800px);
+            overflow-y: scroll;
+            max-height: 50vh;
         }
       }
 
       @media (min-width: 769px) {
-        &.custom-dropdown-width {
+        &.custom-dropdown-dimensions {
             @include dropdown-width(60vw, 200px, 600px);
+            overflow-y: scroll;
+            max-height: 80vh;
         }
       }
 }
