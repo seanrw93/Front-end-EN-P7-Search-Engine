@@ -7,10 +7,8 @@ export class Dropdown {
         this.type = type;
         this.items = items;
         this.bgClass = bgClass;
-
     }
     
-
     renderDropdown() {
         const itemsList = this.items.map(item => {
             return (`
