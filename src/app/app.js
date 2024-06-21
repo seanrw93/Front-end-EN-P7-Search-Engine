@@ -109,7 +109,7 @@ function displayTags() {
         item.addEventListener("click", (e) => {
             const tagText = e.target.textContent;
             const dropdownMenu = item.closest(".dropdown-menu");
-            let tag = null;
+            let tag;
 
             if (dropdownMenu.classList.contains("bg-primary")) {
                 tag = new Tag("primary", tagText);
@@ -152,7 +152,7 @@ async function init() {
     displayDropdowns();
     displayCard(cards);
     displayTags();
-    
+
     searchInput.addEventListener("input", searchRecipes);
 };
 
