@@ -30,7 +30,7 @@ export const recipes = [
         "time": 10,
         "description": "Place the ice cubes to your taste in the blender, add the milk, the coconut cream, the juice from 2 lemons and the sugar. Blend to the desired consistency",
         "appliance": "Blender",
-        "": ["tablespoons", "glasses", "lemon squeezer" ]
+        "utensils": ["tablespoons", "glasses", "lemon squeezer" ]
     },
     {
         "id": 2,
@@ -102,7 +102,7 @@ export const recipes = [
         "time": 80,
         "description": "Cut the chicken into pieces and brown them in a pan with olive oil. Season. When browned, let cook, adding water. After 30 minutes, add the tomato coulis, the coconut milk as well as the pepper and onion chopped into pieces. Let cook for an additional 30 minutes. Serve with rice",
         "appliance": "Casserole dish",
-        "": ["knife"]
+        "utensils": ["knife"]
     },{
         "id": 4,
         "name": "Rice salad",
@@ -139,7 +139,7 @@ export const recipes = [
         "time": 50,
         "description": "Cook the rice. Once the rice is cooked, let it cool. Cut the hard-boiled eggs into quarters or into strips as desired, dice the tomatoes, add the eggs, tomatoes, fish, corn and the dressing to the rice. Add gherkins, olives etc. to taste.",
         "appliance": "Rice cooker",
-        "": ["salad bowl", "colander"]
+        "utensils": ["salad bowl", "colander"]
     },
     {
         "id": 5,
@@ -178,7 +178,7 @@ export const recipes = [
         "time": 45,
         "description": "Spread the dough to the size of the pan, spread the mustard on the dough, add the tuna. Cut the tomatoes into slices and place them on the fish, add a little crème fraîche to the whole pie and top with grated Gruyere. Bake for 30 minutes",
         "appliance":"Oven",
-        "": ["pie dish", "cheese grater", "knife"]
+        "utensils": ["pie dish", "cheese grater", "knife"]
     },
     {
         "id": 6,
@@ -217,7 +217,7 @@ export const recipes = [
         "time": 50,
         "description": "Start by mixing the eggs, sugar and vanilla sugar in a salad bowl, cut the apples into slices, add the crème fraîche to the eggs. Once everything is ready, spread the pie across the pan. Don't forget to prick the base with a fork before placing the apples on the pie. Finally, pour the egg and crême fraîche-based mixture over the top. Bake for 30 minutes",
         "appliance": "Oven",
-        "": ["pie dish", "salad bowl", "fork"]
+        "utensils": ["pie dish", "salad bowl", "fork"]
     },{
         "id": 7,
         "name": "Chocolate and strawberry tartlets",
@@ -250,7 +250,7 @@ export const recipes = [
         "time": 50,
         "description": "Spread the dough into the tartlet pans. Cook the dough for 30 minutes. Cut the chocolate into pieces and heat it up, add the liquid cream to it, add the butter and stir until you have a smooth paste. Pour the paste onto the tartlets. Cut the strawberries in half and place them on top ",
         "appliance":"Oven",
-        "":["moule à tartelettes (6)", "casserolle"]
+        "utensils":["moule à tartelettes (6)", "casserolle"]
     }, {
         "id": 8,
         "name": "Brownie",
@@ -290,7 +290,7 @@ export const recipes = [
         "time": 60,
         "description": "Chop the nuts coarsely. Melt the chocolate with the butter. Mix together the egg and sugar and mix them with the chocolate. Add the flour. Mix until smooth then add the nuts. Pour the mixture into a baking pan, preferably rectangular. Bake at 180° for 20 to 25 minutes. Take out of the oven and wait a few minutes before removing from the pan. Serve with a scoop of ice cream for more indulgence.",
         "appliance": "Oven",
-        "": ["cake mold", "pan"]
+        "utensils": ["cake mold", "pan"]
     },
     {
         "id": 9,
@@ -322,7 +322,7 @@ export const recipes = [
  "time": 15,
  "description": "Peel the cucumber and cut it in half, remove the seeds. Cut the olives and goat's cheese into pieces. Add the basil and balsamic vinegar and olive oil to taste.",
         "appliance":"Salad bowl",
-        "":["cuillère en bois", "couteau"]
+        "utensils":["cuillère en bois", "couteau"]
     },
     {
         "id": 10,
@@ -357,7 +357,7 @@ export const recipes = [
         "time": 60,
         "description": "Begin by cooking the potatoes in boiling water. Then peel them and cut them into slices. Slice the onions and brown them in butter. Add the smoked ham cut and potatoes, both into pieces. Season to your taste (and that of your guests). Cook for around 10 minutes then add the white wine. After 5 minutes, place it all into a baking dish. Cut up the reblochon, either in slices, or cut into halves from the side and cover the potatoes. Bake (approximately 220°) for 25 minutes. It's ready!",
         "appliance":"Oven",
-        "": ["baking dish", "knife", "Peeling"]
+        "utensils": ["baking dish", "knife", "Peeling"]
     },{
         "id": 11,
         "name": "Tomato, mozzarella and apple salad",
@@ -395,7 +395,7 @@ export const recipes = [
         "time": 10,
         "description": "Begin by cutting the salad leaves, add the cherry tomatoes and the cheese, cut into cubes or balls with a melon spoon. Cut the Parma ham into thin strips. Add the apple, also cut into small pieces. Season to your taste. ",
         "appliance": "Salad bowl",
-        "": ["knife", "melon spoon" ]
+        "utensils": ["knife", "melon spoon" ]
     },{
         "id": 12,
         "name": "Rhubarb and apple compote",
@@ -424,7 +424,7 @@ export const recipes = [
         "time": 40,
         "description": "Peel the fruit and cut it into pieces, place it in a pan, adding the water and vanilla sugar. Leave to cook for 15 minutes, stirring regularly.",
         "appliance": "Pan",
-        "": ["knife", "peeling"]
+        "utensils": ["knife", "peeling"]
     },
     {
         "id": 13,
@@ -460,7 +460,7 @@ export const recipes = [
         "time":40,
         "description":"Cook the potatoes for around 30 minutes. Thinly slice the shallots. While the potatoes are cooking. Prepare the dressing with the olive oil and the cider vinegar. Season to taste. Place the mash into a salad bowl. Add",
         "appliance": "Pan",
-        "":["couteau","saladier","cuillère en bois"]
+        "utensils":["couteau","saladier","cuillère en bois"]
     },
     {
         "id": 14,
@@ -500,7 +500,7 @@ export const recipes = [
         "time": 100,
         "description":"Mix the flour and eggs together, melt 25 grams of butter and add to the paste. Add salt. Leave to rest for 1 hour. Make the galette pancakes and leave to cool. Heat the sausages with the butter and the onion. Wrap the sausages in the pancakes with some of the cheese. Place the rest of the raclette cheese on top of the pancakes. Bake for 20 minutes",
         "appliance": "Oven",
-        "":["poelle à frire","couteau"]
+        "utensils":["poelle à frire","couteau"]
     },
     {
         "id": 15,
@@ -539,7 +539,7 @@ export const recipes = [
         "time": 60,
         "description":"Mix the flour, eggs and milk together in a salad bowl. Beat until the mixture is smooth. Meanwhile, melt the butter and add some of it to the pancake batter. Melt the chocolate (with the remaining salted butter). While you heat the pancakes. Add the melted chocolate and the sliced bananas. Add a touch of whipped cream for style",
         "appliance": "Pancake pan",
-        "":["saladier", "louche", "cuillère en bois"]
+        "utensils":["saladier", "louche", "cuillère en bois"]
     },
     {
         "id": 16,
@@ -575,7 +575,7 @@ export const recipes = [
         "time": 45,
         "description":"Cook the pasta. If you do not have penne, pasta shells will work just as well. Cut the tomatoes into small pieces, either sliced or diced. Cut the basil into small pieces and mix it in with the tomatoes. Cut the mozzarella into slices. Preheat the oven to 200°. Alternate between layers of pasta and layers of tomatoes, finish off with a layer of pasta and cover with cheese. Bake for 30 minutes and enjoy! A simple recipe that will please the little ones as well as the grown ups.",
         "appliance": "Oven",
-        "":["plat à gratin", "couteau", "râpe à fromage"]
+        "utensils":["plat à gratin", "couteau", "râpe à fromage"]
     },
     {
         "id": 17,
@@ -607,7 +607,7 @@ export const recipes = [
         "time": 15,
         "description":"Cut the strawberries into pieces, cut out the melon's flesh and remove the seeds. Place together into a blender. Add a tablespoon of lemon juice as well as the ice cubes. Add some mint leaves for more freshness. Blend it. Serve and enjoy.",
         "appliance": "Blender",
-        "":["verres", "couteau", "presse citron"]
+        "utensils":["verres", "couteau", "presse citron"]
     },
     {
         "id": 18,
@@ -632,7 +632,7 @@ export const recipes = [
         "time": 10,
         "description":"Break off 1/5th of the pineapple (a nice slice that will serve as decoration for the glasses), place the rest, cut into cubes, in the blender, add the vanilla ice cream and the milk. Blend. Serve and decorate with the remaining pineapple. It's ready",
         "appliance": "Blender",
-        "":["verres", "couteau"]
+        "utensils":["verres", "couteau"]
     },
     {
         "id": 19,
@@ -665,7 +665,7 @@ export const recipes = [
         "time": 0,
         "description":"Cut the fruit into pieces, add the lemon juice, milk and icing sugar. Blend. Add some ice cubes if the milk has not been chilled.",
         "appliance": "Blender",
-        "":["couteau", "verres", "presse citron"]
+        "utensils":["couteau", "verres", "presse citron"]
     },
     {
         "id": 20,
@@ -701,7 +701,7 @@ export const recipes = [
         "time": 30,
         "description":"Cook the pasta as shown on the packet. Brown the lardons in a skillet with olive oil. Add the crème fraîche and turn the heat down to minimum. When the Tagliatelle is ready, place it in the skillet and mix it all together well, adding an egg yolk. Serve and add grated parmesan.",
         "appliance": "Skillet",
-        "":["râpe à fromage", "cuillère en bois"]
+        "utensils":["râpe à fromage", "cuillère en bois"]
     },
     {
         "id": 21,
@@ -741,7 +741,7 @@ export const recipes = [
         "time": 30,
         "description":"Cook the minced meat in a frying pan. In another, cook the onions, chopped into thin cubes, with a bit of butter. Add some red wine. Mix the onions with the minced meat. Cook the pasta for the time shown on the packet. Add the tomato coulis to the minced meat. Once the pasta is cooked, add the crème fraîche to the minced meat. Serve.",
         "appliance": "Pan.",
-        "":["Cuillère en bois", "louche", "couteau"]
+        "utensils":["Cuillère en bois", "louche", "couteau"]
     },
     {
         "id": 22,
@@ -776,7 +776,7 @@ export const recipes = [
         "time": 30,
         "description":"Melt the chocolate and the butter in a double boiler. Beat the eggs with the sugar in a salad bowl until the mixture has a mousse-like texture. Add the flour as well as the melted butter and chocolate mixture. Butter the cake mold. Place in an oven preheated to 200° then heat through for a further 15 minutes. It's ready. Serve with a scoop of ice cream or double cream.",
         "appliance": "Oven",
-        "":["moule à gateaux", "fouet", "casserolle"]
+        "utensils":["moule à gateaux", "fouet", "casserolle"]
     },
     {
         "id": 23,
@@ -816,7 +816,7 @@ export const recipes = [
         "time": 60,
         "description":"Line a baking pan with the dough and prick it. Scatter butter over it. Heat the lardons in a frying pan. Beat the eggs together adding the crème fraîche and the milk. Finally, add the lardons, season to your taste. Pour the mixture over the pastry. Cook for approximately 50 minutes.",
         "appliance": "Oven",
-        "":["moule à gateaux", "rouleau à patisserie", "fouet"]
+        "utensils":["moule à gateaux", "rouleau à patisserie", "fouet"]
     },
     {
         "id": 24,
@@ -855,7 +855,7 @@ export const recipes = [
         "time": 40,
         "description":"Dice the cucumber and the tomatoes, place them in a salad bowl with the corn and crumbled fish, add the pasta. Add the mayonnaise. Mix it all together and serve chilled.",
         "appliance": "Salad bowl",
-        "":["couteau", "cuillère en bois"]
+        "utensils":["couteau", "cuillère en bois"]
     },
     {
         "id": 25,
@@ -890,7 +890,7 @@ export const recipes = [
         "time": 30,
         "description":"Melt the butter and mix it together with the sugar. Finally, add the egg. Add the flour while mixing slowly to get a smooth mixture without lumps. Add the chocolate chips. Prepare a baking tray with little cut-outs for the cookies. Bake for 10 minutes at 180°.",
         "appliance": "Oven",
-        "":["fouet", "saladier", "plaque de cuisson"]
+        "utensils":["fouet", "saladier", "plaque de cuisson"]
     },
     {
         "id": 26,
@@ -921,7 +921,7 @@ export const recipes = [
         "time": 25,
         "description":"Pour the oil into a pressure cooker, cut the vegetables and pour them into the hot oil. Leave to cook and stir for 10 minutes. Mix in a blender. Serve.",
         "appliance": "Blend",
-        "":["cocotte minute", "couteau"]
+        "utensils":["cocotte minute", "couteau"]
     },
     {
         "id": 27,
@@ -955,7 +955,7 @@ export const recipes = [
         "time": 15,
         "description":"Melt the sorrel with the semi-salted butter, add a liter of water. Add the noodles. Cook. When ready, remove from the heat and after 5 minutes, add the egg yolk and the crème fraîche.",
         "appliance": "Pan",
-        "":["couteau","cuillère en bois"]
+        "utensils":["couteau","cuillère en bois"]
     },
     {
         "id": 28,
@@ -990,7 +990,7 @@ export const recipes = [
         "time": 80,
         "description":"Chop the whites of the leeks into slices and heat them up in 25 grams of butter. Add the potatoes, cut into pieces. Add the water and leave to simmer for 45 minutes. Heat the sorrel with the remaining butter then add it all together. Blend. Add the cream. Enjoy.",
         "appliance": "Blend",
-        "":["casserolle","couteau"]
+        "utensils":["casserolle","couteau"]
     },
     {
         "id": 29,
@@ -1021,7 +1021,7 @@ export const recipes = [
         "time": 30,
         "description":"Take the chickpeas, place them in the blender with the olive oil, add the juice from 2 lemons and some paprika, according to taste.",
         "appliance": "Blend",
-        "":["cuillère en bois", "presse citron"]
+        "utensils":["cuillère en bois", "presse citron"]
     },
     {
         "id": 30,
@@ -1046,7 +1046,7 @@ export const recipes = [
         "time": 60,
         "description":"Place all of the ingredients into a casserole dish. Add water to cover everything and simmer for 1 hour. Mix in a blender. Season. It's ready",
         "appliance": "Blend",
-        "":["casserolle", "cuillère en bois"]
+        "utensils":["casserolle", "cuillère en bois"]
     },
     {
         "id": 31,
@@ -1080,7 +1080,7 @@ export const recipes = [
         "time": 60,
         "description":"Chop the carrots and potatoes into cubes. Brown them off in the butter. Add the bacon. When the bacon is browned, add a large glass of water. Add the peas and the green beans (both pre-cooked). Add salt, pepper, thyme and bay leaves",
         "appliance": "Frying pan",
-        "":["Couteau", "économe"]
+        "utensils":["Couteau", "économe"]
     },
     {
         "id": 32,
@@ -1121,7 +1121,7 @@ export const recipes = [
         "time": 20,
         "description":"Butter the slices of bread, add a slice of Emmental, one slice of turkey breast and another slice of Emmental between 2 slices of sandwich bread. In a bowl, mix the grated Gruyere with the milk and the nutmeg. Place on top of the croque monsieurs. Bake for 10 minutes.",
         "appliance": "Oven",
-        "":["râpe à fromage", "cuillère à Soupe", "couteau"]
+        "utensils":["râpe à fromage", "cuillère à Soupe", "couteau"]
     },
     {
         "id": 33,
@@ -1156,7 +1156,7 @@ export const recipes = [
         "time": 5,
         "description":"Mix the cottage cheese with the lemon. Season to taste. Brown the sandwich bread. Then spread the mixture. Add a salad leaf then the smoked salmon. It's ready.",
         "appliance": "Oven",
-        "":["couteau", "cuillère en bois"]
+        "utensils":["couteau", "cuillère en bois"]
     },
     {
         "id": 34,
@@ -1184,7 +1184,7 @@ export const recipes = [
         "time": 25,
         "description":"Peel the sweet potatoes and cut them into pieces. Cook them for 20 minutes in a pan of boiling water. Place them in the blender adding the cream and olive oil to your taste. Season. Squeeze the orange and add the juice to the mixture. Serve.",
         "appliance": "Blend",
-        "":["couteau", "économe", "cuillère en bois"]
+        "utensils":["couteau", "économe", "cuillère en bois"]
     },
     {
         "id": 35,
@@ -1223,7 +1223,7 @@ export const recipes = [
         "time": 25,
         "description":"Peel the vegetables, cut them into pieces and cook them in a pressure cooker for 15 minutes. Blend adding the butter and cream. Add the cumin and nutmeg.",
         "appliance": "Blend",
-        "":["cocotte minute", "couteau", "cuillère en bois"]
+        "utensils":["cocotte minute", "couteau", "cuillère en bois"]
     },
     {
         "id": 36,
@@ -1262,7 +1262,7 @@ export const recipes = [
         "time": 35,
         "description":"Grate the zucchini and brown them for 15 minutes. Add the fresh goat's cheese. Prepare the Bechamel with the milk and corn starch. Season, add the nutmeg according to taste. In a dish, place a bit of the sauce at the bottom, then some lasagne sheets, then some zucchini, etc. Finish with the sauce and add the Gruyere. Bake for 20 to 25 minutes at 180°.",
         "appliance": "Oven",
-        "":["plat à gratin", "râpe à fromage", "fouet"]
+        "utensils":["plat à gratin", "râpe à fromage", "fouet"]
     },
     {
         "id": 37,
@@ -1302,7 +1302,7 @@ export const recipes = [
         "time": 60,
         "description":"Cut the zucchini lengthwise. Place the zucchini into a salad bowl. Set aside. Sauté the zucchini in 25cl of olive oil. Add the onion then the minced meat. Place the stuffing in the zucchini. Add the tomato coulis. Bake for 30 minutes. Before the end of baking, add the grated cheese",
         "appliance": "Oven",
-        "":["couteau", "cuillère en bois", "Poelle à frire"]
+        "utensils":["couteau", "cuillère en bois", "Poelle à frire"]
     },
     {
         "id": 38,
@@ -1332,7 +1332,7 @@ export const recipes = [
         "time": 20,
         "description":"Whisk the eggs, sugar and milk. Soak the bread slices. Bake for approximately 10 minutes at 180°. Serve",
         "appliance": "Oven",
-        "":["fouet", "bol","Cuillère à Soupe"]
+        "utensils":["fouet", "bol","Cuillère à Soupe"]
     },
     {
         "id": 39,
@@ -1362,7 +1362,7 @@ export const recipes = [
         "time": 40,
         "description":"Dice the apples. Mix the flour, sugar and butter in a salad bowl. Mix well. Butter the baking dish and add the apples. Place the mixture that you've made on top. Bake for 20 minutes",
         "appliance": "Oven",
-        "":["saladier", "couteau","fouet"]
+        "utensils":["saladier", "couteau","fouet"]
     },
     {
         "id": 40,
@@ -1392,7 +1392,7 @@ export const recipes = [
         "time": 10,
         "description":"Place the water, lemon juice and sugar in a salad bowl. Mix well. Add the baking soda. Serve. Add the ice cubes and a mint leaf for decoration.",
         "appliance": "Salad bowl",
-        "":["cuillère en bois"]
+        "utensils":["cuillère en bois"]
     },
     {
         "id": 41,
@@ -1417,7 +1417,7 @@ export const recipes = [
         "time": 20,
         "description":"Separate the egg whites. Melt the chocolate in a double boiler. Add the yolk and the sugar to the chocolate away from the heat. Beat the egg whites until still. Add the egg whites to the chocolate mixture. Mix gently with a spatula. Serve in a dish or in glasses. Chill",
         "appliance": "Pan",
-        "":["fouet", "spatule", "verres"]
+        "utensils":["fouet", "spatule", "verres"]
     }, 
     {
         "id": 42,
@@ -1446,7 +1446,7 @@ export const recipes = [
         "time": 60,
         "description":"Begin by preparing the chocolate mousse at least 2 hours in advance. When the mousse is ready and rested. Moisten the ladyfingers in the pear juice. Arrange them. Alternate: chocolate mousse, ladyfingers and pears. Chill.",
         "appliance": "Charlotte mold",
-        "":["saladier", "couteau", "fouet"]
+        "utensils":["saladier", "couteau", "fouet"]
     },
     {
         "id": 43,
@@ -1479,7 +1479,7 @@ export const recipes = [
         "time": 50,
         "description":"Preheat the oven to 200°. Spread the dough. Place into a pie dish. Beat the eggs with the sugar. Add the lemon juice and the butter. Pour it onto the pastry. Bake for 30 minutes. Enjoy your meal ",
         "appliance": "Oven",
-        "":["rouleau à patisserie", "moule à tarte", "presse citron"]
+        "utensils":["rouleau à patisserie", "moule à tarte", "presse citron"]
     }, 
     {
         "id": 44,
@@ -1515,7 +1515,7 @@ export const recipes = [
         "time": 15,
         "description":"Mix the flour and the melted butter, slowly adding the milk. Add some sugar after cooking. Mix well. Add the chocolate pieces and heat for 8 minutes, mixing with a wooden spoon. Place into glasses",
         "appliance": "Pan",
-        "":["cuillère en bois"]
+        "utensils":["cuillère en bois"]
     },
     {
         "id": 45,
@@ -1545,7 +1545,7 @@ export const recipes = [
         "time": 30,
         "description":"Boil the milk (you can add some vanilla essence to it. Beat the eggs and the sugar, add the flour then finally add the hot milk. Place onto a low heat to thick, stirring for approximately 5 to 10 minutes.",
         "appliance": "Pan",
-        "":["fouet","saladier"]
+        "utensils":["fouet","saladier"]
     },
     {
         "id": 46,
@@ -1585,7 +1585,7 @@ export const recipes = [
         "time": 60,
         "description":"Mix the flour with the sugar and the eggs adding some vanilla sugar. Slowly add the milk. Add a small glass of rum. Pour the mixture into a buttered dish placing the plums on top and bake for 45 minutes at 200°",
         "appliance": "Oven",
-        "":["fouet", "moule", "verres"]
+        "utensils":["fouet", "moule", "verres"]
     },
     {
         "id": 47,
@@ -1616,7 +1616,7 @@ export const recipes = [
         "time": 5,
         "description":"Mix the lemon juice with the sugar and the mascarpone. Add the crème fraîche. Mix it together and place in the freezer for 1 hour. Serve",
         "appliance": "Salad bowl",
-        "":["fouet", "verres", "cuillère en bois"]
+        "utensils":["fouet", "verres", "cuillère en bois"]
     },
     {
         "id": 48,
@@ -1651,7 +1651,7 @@ export const recipes = [
         "time": 40,
         "description":"Roll out the pizza dough. Mash the peeled tomatoes, spread them over the dough, add the bacon and mushrooms. Add the Gruyere and bake for 20 minutes at 220°",
         "appliance": "Oven",
-        "":["rouleau à patisserie", "râpe à fromage","couteau"]
+        "utensils":["rouleau à patisserie", "râpe à fromage","couteau"]
     },
     {
         "id": 49,
@@ -1684,7 +1684,7 @@ export const recipes = [
         "time": 0,
         "description":"Chop the fruit. Liquefy in the blender. Chill. Serve",
         "appliance": "Blender",
-        "":["couteau", "verres"]
+        "utensils":["couteau", "verres"]
     },
     {
         "id": 50,
@@ -1719,6 +1719,6 @@ export const recipes = [
         "time": 60,
         "description":"Prepare the frangipane: Mix together the sugar, ground almonds, butter and eggs. Spread half of the pastry dough in a pie dish. Fill with frangipane and top with the remaining puff pastry. Bake for 30 minutes",
         "appliance": "Oven",
-        "":["rouleau à patisserie","fouet"]
+        "utensils":["rouleau à patisserie","fouet"]
     }
 ]

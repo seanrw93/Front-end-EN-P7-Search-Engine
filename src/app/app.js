@@ -3,8 +3,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../scss/main.scss';
 
 import { recipes } from '../data/recipes.js';
-import { Recipes } from './recipe-card.js';
-import { Dropdown } from './dropdown-menu.js';
+
+import { RecipeCard } from './factories/recipe-card.js';
+import { Dropdown } from './factories/dropdown-menu.js';
+import { Tag } from './factories/tags.js';
 
 async function getRecipes(id) {
     try {
@@ -32,26 +34,28 @@ function extractDropdownItems(recipes, key) {
 
     recipes.forEach(recipe => {
         if (key === 'ingredients') {
-            recipe.ingredients.forEach(ingredient => itemsSet.add(ingredient.ingredient));
+            recipe.ingredients.forEach(ingredient => itemsSet.add(ingredient.ingredient.toLowerCase()));
         } else if (key === 'appliance') {
-            itemsSet.add(recipe.appliance);
+            itemsSet.add(recipe.appliance.toLowerCase());
         } else if (key === 'utensils') {
-            recipe.utensils.forEach(utensil => itemsSet.add(utensil));
+            recipe.utensils.forEach(utensil => itemsSet.add(utensil.toLowerCase()));
         }
     });
 
-    return Array.from(itemsSet);
+    const uniqueItemsArray = Array.from(itemsSet);
+
+    return uniqueItemsArray.map(item => item.charAt(0).toUpperCase() + item.slice(1));
 }
 
 const uniqueIngredients = extractDropdownItems(recipes, 'ingredients');
 const uniqueAppliances = extractDropdownItems(recipes, 'appliance');
-const uniqueUtensils = extractDropdownItems(recipes, 'ustensils');
+const uniqueUtensils = extractDropdownItems(recipes, 'utensils');
 
 const ingredientsDropdown = new Dropdown('ingredients', uniqueIngredients, 'primary');
 const appliancesDropdown = new Dropdown('devices', uniqueAppliances, 'success');
 const utensilsDropdown = new Dropdown('utensils', uniqueUtensils, 'danger');
 
-function renderDropdowns() {
+function displayDropdowns() {
     const dropdownsContainer = document.querySelector("#dropdowns");
     dropdownsContainer.insertAdjacentHTML("beforeend", ingredientsDropdown.renderDropdown());
     dropdownsContainer.insertAdjacentHTML("beforeend", appliancesDropdown.renderDropdown());
@@ -65,7 +69,7 @@ function displayCard(card) {
     recipeRow.innerHTML = ''; 
 
     card.forEach(item => {
-        const cardFactory = new Recipes(item);
+        const cardFactory = new RecipeCard(item);
         const cardDOM = cardFactory.renderCard();
         recipeRow.insertAdjacentHTML("beforeend", cardDOM);
     });
@@ -95,30 +99,45 @@ function searchRecipes() {
     }
 }
 
-function test() {
-        //TEST
+function displayTags() {
         const dropDownItems = document.querySelectorAll(".dropdown-item");
         const tagsArray = [];
     
         dropDownItems.forEach((item) => {
             item.addEventListener("click", (e) => {
                 const tagText = e.target.textContent;
-                tagsArray.push(tagText);
+                const dropdownMenu = item.closest(".dropdown-menu");
+                let tag = null;
+
+                if (dropdownMenu.classList.contains("bg-primary")) {
+                    tag = new Tag("primary", tagText);
+                } else if (dropdownMenu.classList.contains("bg-success")) {
+                    tag = new Tag("success", tagText);
+                } else if (dropdownMenu.classList.contains("bg-danger")) {
+                    tag = new Tag("danger", tagText);
+                }
+
+                console.log(tag)
+                if (tag) {
+                    const tagContainer = document.querySelector("#tags-container");
+                    tagContainer.insertAdjacentHTML("beforeend", tag.renderTag());
+                    tagsArray.push(tag);
+                }
             });
         });
     
-        console.log(tagsArray);
-        //END TEST
+        // return tagsArray
+        console.log(tagsArray)
 }
 
 
 async function init() {
     const cards = await getRecipes();
-    renderDropdowns();
+    displayDropdowns();
     displayCard(cards);
 
     searchInput.addEventListener("input", searchRecipes);
-    test();
+    displayTags();
 
 };
 

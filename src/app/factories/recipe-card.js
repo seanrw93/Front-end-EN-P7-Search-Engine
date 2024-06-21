@@ -1,4 +1,4 @@
-export class Recipes {
+export class RecipeCard {
     constructor(data) {
         if (!data) {
             throw new Error('Data is undefined');
