@@ -22,3 +22,22 @@
     min-width: $min-width; 
     max-width: $max-width;
 }
+
+@mixin custom-scrollbar($bg-color, $thumb-color) {
+        &::-webkit-scrollbar {
+            width: 8px;
+        }
+  
+        &::-webkit-scrollbar-track {
+            background: $bg-color;
+        }
+  
+      &::-webkit-scrollbar-thumb {
+        background-color: $thumb-color;
+        border-radius: 10px;
+      }
+  
+      &::-webkit-scrollbar-thumb:hover {
+        background-color: #555
+      }
+}

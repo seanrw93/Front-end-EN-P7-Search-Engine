@@ -48,7 +48,7 @@ const uniqueAppliances = extractDropdownItems(recipes, 'appliance');
 const uniqueUtensils = extractDropdownItems(recipes, 'ustensils');
 
 const ingredientsDropdown = new Dropdown('ingredients', uniqueIngredients, 'primary');
-const appliancesDropdown = new Dropdown('Devices', uniqueAppliances, 'success');
+const appliancesDropdown = new Dropdown('devices', uniqueAppliances, 'success');
 const utensilsDropdown = new Dropdown('utensils', uniqueUtensils, 'danger');
 
 function renderDropdowns() {

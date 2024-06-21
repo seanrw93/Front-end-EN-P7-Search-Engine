@@ -26,7 +26,7 @@ export class Dropdown {
                     ${this.type.charAt(0).toUpperCase() + this.type.slice(1)}
                 </button>
 
-                <div class="dropdown-menu bg-${this.bgClass} custom-dropdown-dimensions p-2" id="dropdownMenu-${this.type}" aria-labelledby="dropdownMenu-${this.type}" role="menu">
+                <div class="dropdown-menu bg-${this.bgClass} custom-dropdown-dimensions custom-scrollbar p-2" id="dropdownMenu-${this.type}" aria-labelledby="dropdownMenu-${this.type}" role="menu">
                     <div class="container">
                         <div class="row row-cols-1">
                             <div class="col">
