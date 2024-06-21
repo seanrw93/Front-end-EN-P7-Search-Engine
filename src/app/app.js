@@ -99,46 +99,61 @@ function searchRecipes() {
     }
 }
 
+const tagsArray = [];
+console.log(tagsArray);
+
 function displayTags() {
-        const dropDownItems = document.querySelectorAll(".dropdown-item");
-        const tagsArray = [];
-    
-        dropDownItems.forEach((item) => {
-            item.addEventListener("click", (e) => {
-                const tagText = e.target.textContent;
-                const dropdownMenu = item.closest(".dropdown-menu");
-                let tag = null;
+    const dropDownItems = document.querySelectorAll(".dropdown-item");
 
-                if (dropdownMenu.classList.contains("bg-primary")) {
-                    tag = new Tag("primary", tagText);
-                } else if (dropdownMenu.classList.contains("bg-success")) {
-                    tag = new Tag("success", tagText);
-                } else if (dropdownMenu.classList.contains("bg-danger")) {
-                    tag = new Tag("danger", tagText);
-                }
+    dropDownItems.forEach((item) => {
+        item.addEventListener("click", (e) => {
+            const tagText = e.target.textContent;
+            const dropdownMenu = item.closest(".dropdown-menu");
+            let tag = null;
 
-                console.log(tag)
-                if (tag) {
-                    const tagContainer = document.querySelector("#tags-container");
-                    tagContainer.insertAdjacentHTML("beforeend", tag.renderTag());
-                    tagsArray.push(tag);
-                }
-            });
+            if (dropdownMenu.classList.contains("bg-primary")) {
+                tag = new Tag("primary", tagText);
+            } else if (dropdownMenu.classList.contains("bg-success")) {
+                tag = new Tag("success", tagText);
+            } else if (dropdownMenu.classList.contains("bg-danger")) {
+                tag = new Tag("danger", tagText);
+            }
+
+            if (tag) {
+                const tagContainer = document.querySelector("#tags-container");
+                tagContainer.insertAdjacentHTML("beforeend", tag.renderTag());
+                tagsArray.push(tag);
+
+                // Add event listener to each tag to delete it
+                const tags = document.querySelectorAll(".tag");
+                tags.forEach((elem, index) => {
+                    elem.addEventListener("click", () => {
+                        deleteTag(elem, index);
+                    });
+                });
+            }
         });
-    
-        // return tagsArray
-        console.log(tagsArray)
+    });
+
+    return tagsArray;
 }
 
+function deleteTag(tagElement, index) {
+    const tagIndex = tagsArray[index]
+    if (tagIndex !== -1) {
+        tagsArray.splice(tagIndex, 1);
+        tagElement.remove();
+    }
+}
 
 async function init() {
     const cards = await getRecipes();
+
     displayDropdowns();
     displayCard(cards);
-
-    searchInput.addEventListener("input", searchRecipes);
     displayTags();
-
+    
+    searchInput.addEventListener("input", searchRecipes);
 };
 
 init();

@@ -11,7 +11,7 @@ export class Tag {
 
     renderTag() {
         return (`
-            <a href="#" type="button" class="btn btn-${this.btnClass} filter-btn mb-2">
+            <a href="#" type="button" class="btn btn-${this.btnClass} tag mb-2">
                 <span class="small tag-text">${this.tagText}</span>
                 <span class="badge">
                     <i class="fa-regular fa-circle-xmark"></i>
