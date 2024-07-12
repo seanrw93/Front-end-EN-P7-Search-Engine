@@ -1,12 +1,24 @@
 export class Dropdown {
-    constructor(type, items, bgClass) {
-        if (!type || !items || !bgClass) {
+    constructor(type, items) {
+        if (!type || !items) {
             throw new Error('Data is undefined');
         }
 
         this.type = type;
         this.items = items;
-        this.bgClass = bgClass;
+        switch (type) {
+            case 'ingredients':
+                this.bgClass = 'primary';
+                break;
+            case 'devices':
+                this.bgClass = 'success';
+                break;
+            case 'utensils':
+                this.bgClass = 'danger';
+                break;
+            default:
+                this.bgClass = '';
+        }
     }
     
     renderDropdown() {
@@ -24,7 +36,7 @@ export class Dropdown {
                     ${this.type.charAt(0).toUpperCase() + this.type.slice(1)}
                 </button>
 
-                <div class="dropdown-menu bg-${this.bgClass} custom-dropdown-dimensions custom-scrollbar p-2" id="dropdownMenu-${this.type}" aria-labelledby="dropdownMenu-${this.type}" role="menu">
+                <div id="${this.type}-dropdown" class="dropdown-menu bg-${this.bgClass} custom-dropdown-dimensions custom-scrollbar p-2" id="dropdownMenu-${this.type}" aria-labelledby="dropdownMenu-${this.type}" role="menu">
                     <div class="container">
                         <div class="row row-cols-1">
                             <div class="col">

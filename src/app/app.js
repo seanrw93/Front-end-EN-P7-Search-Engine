@@ -26,9 +26,7 @@ async function getRecipes(id) {
     }
 }
 
-
-//Dropdown menus
-
+// Dropdown menus
 function extractDropdownItems(recipes, key) {
     const itemsSet = new Set();
 
@@ -51,9 +49,9 @@ const uniqueIngredients = extractDropdownItems(recipes, 'ingredients');
 const uniqueAppliances = extractDropdownItems(recipes, 'appliance');
 const uniqueUtensils = extractDropdownItems(recipes, 'utensils');
 
-const ingredientsDropdown = new Dropdown('ingredients', uniqueIngredients, 'primary');
-const appliancesDropdown = new Dropdown('devices', uniqueAppliances, 'success');
-const utensilsDropdown = new Dropdown('utensils', uniqueUtensils, 'danger');
+const ingredientsDropdown = new Dropdown('ingredients', uniqueIngredients);
+const appliancesDropdown = new Dropdown('devices', uniqueAppliances);
+const utensilsDropdown = new Dropdown('utensils', uniqueUtensils);
 
 function displayDropdowns() {
     const dropdownsContainer = document.querySelector("#dropdowns");
@@ -62,11 +60,11 @@ function displayDropdowns() {
     dropdownsContainer.insertAdjacentHTML("beforeend", utensilsDropdown.renderDropdown());
 }
 
-//End Dropdown menus
+// End Dropdown menus
 
 function displayCard(card) {
     const recipeRow = document.querySelector("#recipe-row");
-    recipeRow.innerHTML = ''; 
+    recipeRow.innerHTML = '';
 
     card.forEach(item => {
         const cardFactory = new RecipeCard(item);
@@ -77,15 +75,48 @@ function displayCard(card) {
 
 const searchInput = document.querySelector("#search-recipe");
 
+const tagsArray = [];
+console.log(tagsArray);
+
+function filterByTags(recipes, tagsArray) {
+    if (tagsArray.length === 0) {
+        return recipes;
+    }
+
+    return recipes.filter((card) => {
+        const ingredientTags = tagsArray.filter(tag => tag.btnClass === 'primary').map(tag => tag.tagText.toLowerCase());
+        const applianceTags = tagsArray.filter(tag => tag.btnClass === 'success').map(tag => tag.tagText.toLowerCase());
+        const utensilTags = tagsArray.filter(tag => tag.btnClass === 'danger').map(tag => tag.tagText.toLowerCase());
+
+        const ingredientMatch = ingredientTags.every(tag =>
+            card.ingredients.some(ingredient => ingredient.ingredient.toLowerCase().includes(tag)) ||
+            card.description.toLowerCase().includes(tag)
+        );
+        const applianceMatch = applianceTags.every(tag =>
+            card.appliance.toLowerCase().includes(tag) || 
+            card.description.toLowerCase().includes(tag)
+        );
+        const utensilMatch = utensilTags.every(tag =>
+            card.utensils.some(utensil => utensil.toLowerCase().includes(tag)) || 
+            card.description.toLowerCase().includes(tag)
+        );
+
+        return ingredientMatch && applianceMatch && utensilMatch;
+    });
+}
+
 function searchRecipes() {
     const searchValue = searchInput.value.toLowerCase();
-    if (searchValue.length >= 3) {
-        const filteredCards = recipes.filter((card) => {
-            // Split the name into words and check if any word starts with the search value
+
+    let filteredCards = recipes;
+
+    if (searchValue) {
+        filteredCards = filteredCards.filter((card) => {
+            // Check for name match
             const nameWords = card.name.toLowerCase().split(" ");
             const nameMatch = nameWords.some(word => word.startsWith(searchValue));
 
-            // Split the ingredients into words and check if any word starts with the search value
+            // Check for ingredient match
             const ingredientMatch = card.ingredients.some(ingredient => {
                 const ingredientWords = ingredient.ingredient.toLowerCase().split(" ");
                 return ingredientWords.some(word => word.startsWith(searchValue));
@@ -93,30 +124,47 @@ function searchRecipes() {
 
             return nameMatch || ingredientMatch;
         });
-        displayCard(filteredCards);
-    } else {
-        displayCard(recipes);
     }
-}
 
-const tagsArray = [];
-console.log(tagsArray);
+    filteredCards = filterByTags(filteredCards, tagsArray);
+
+    const dropdownItems = document.querySelectorAll(".dropdown-item");
+    if (filteredCards.length === 0) {
+        dropdownItems.forEach((item) => {
+            item.classList.add("disabled-item");
+            searchInput.setAttribute("maxlength", searchInput.value.length);
+        });
+        alert("No recipes found. Please try again.");
+    } else {
+        dropdownItems.forEach((item) => {
+            item.classList.remove("disabled-item");
+            searchInput.removeAttribute("maxlength");
+        });
+    }
+
+    displayCard(filteredCards);
+}
 
 function displayTags() {
     const dropDownItems = document.querySelectorAll(".dropdown-item");
 
     dropDownItems.forEach((item) => {
         item.addEventListener("click", (e) => {
-            const tagText = e.target.textContent;
+            const tagText = item.textContent;
             const dropdownMenu = item.closest(".dropdown-menu");
+
+            // Debugging: Check if the class is added
+            console.log(item);
+            console.log("Item classes after add:", item.classList);
+
             let tag;
 
-            if (dropdownMenu.classList.contains("bg-primary")) {
-                tag = new Tag("primary", tagText);
-            } else if (dropdownMenu.classList.contains("bg-success")) {
-                tag = new Tag("success", tagText);
-            } else if (dropdownMenu.classList.contains("bg-danger")) {
-                tag = new Tag("danger", tagText);
+            if (dropdownMenu.id === "ingredients-dropdown") {
+                tag = new Tag("ingredient", tagText);
+            } else if (dropdownMenu.id === "devices-dropdown") {
+                tag = new Tag("appliance", tagText);
+            } else if (dropdownMenu.id === "utensils-dropdown") {
+                tag = new Tag("utensil", tagText);
             }
 
             if (tag) {
@@ -127,11 +175,21 @@ function displayTags() {
                 // Add event listener to each tag to delete it
                 const tags = document.querySelectorAll(".tag");
                 tags.forEach((elem, index) => {
-                    elem.addEventListener("click", () => {
+                    elem.addEventListener("click", (e) => {
+                        e.stopPropagation();
+                        dropDownItems.forEach((item) => {
+                            if (item.textContent === e.target.textContent) {
+                                item.style.pointerEvents = "auto";
+                                item.style.opacity = "1";
+                            }
+                        });
                         deleteTag(elem, index);
+                        searchRecipes(); // Update the search results when a tag is deleted
                     });
                 });
             }
+
+            searchRecipes(); // Update the search results when a tag is added
         });
     });
 
@@ -139,11 +197,10 @@ function displayTags() {
 }
 
 function deleteTag(tagElement, index) {
-    const tagIndex = tagsArray[index]
-    if (tagIndex !== -1) {
-        tagsArray.splice(tagIndex, 1);
-        tagElement.remove();
-    }
+    tagsArray.splice(index, 1);
+    tagElement.remove();
+    searchRecipes(); // Update the search results when a tag is deleted
+    console.log(tagsArray);
 }
 
 async function init() {

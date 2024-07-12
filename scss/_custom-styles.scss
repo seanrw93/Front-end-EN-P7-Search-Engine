@@ -74,6 +74,22 @@
             @include custom-scrollbar(lighten($danger, 5%), darken($danger, 5%));
         }
     }
+
+    .dropdown-item {
+        transition: font-weight 0.1s ease;
+
+        &:hover {
+            background-color: transparent;
+            text-decoration: underline;
+            color: #FFF !important;
+            font-weight: bold;
+        }
+
+        &.disabled-item {
+            pointer-events: none;
+            opacity: 0.5;
+        }
+    }
 }
 
 .search-input {

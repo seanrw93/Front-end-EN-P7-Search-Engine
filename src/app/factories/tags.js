@@ -1,11 +1,24 @@
 export class Tag {
-    constructor(btnClass, tagText) {
-        if (!btnClass || !tagText) {
+    constructor(tagType, tagText) {
+        if (!tagType || !tagText) {
             throw new Error('Data is undefined');
         }
 
-        this.btnClass = btnClass;
+        switch (tagType) {
+            case 'ingredient':
+                this.btnClass = 'primary';
+                break;
+            case 'appliance':
+                this.btnClass = 'success';
+                break;
+            case 'utensil':
+                this.btnClass = 'danger';
+                break;
+            default:
+                this.btnClass = 'primary';
+        }
         this.tagText = tagText;
+        this.tagType = tagType
 
     }
 
