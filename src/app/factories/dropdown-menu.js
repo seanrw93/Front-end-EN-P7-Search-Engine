@@ -41,7 +41,7 @@ export class Dropdown {
                         <div class="row row-cols-1">
                             <div class="col">
                                 <div class="search-input">
-                                    <input class="form-control fw-bold custom-input" type="search" placeholder="Search ${this.type}" aria-label="Search">
+                                    <input class="dropdown-search form-control fw-bold custom-input" type="search" placeholder="Search ${this.type}" aria-label="Search">
                                 </div>
                             </div>
                         </div>

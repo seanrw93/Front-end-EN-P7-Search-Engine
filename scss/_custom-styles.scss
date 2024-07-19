@@ -85,7 +85,7 @@
             font-weight: bold;
         }
 
-        &.disabled-item {
+        &.selected {
             pointer-events: none;
             opacity: 0.5;
         }

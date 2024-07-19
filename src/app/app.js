@@ -145,6 +145,35 @@ function searchRecipes() {
     displayCard(filteredCards);
 }
 
+function searchDropdownItems() {
+    const searchInputs = document.querySelectorAll(".dropdown-search");
+
+    searchInputs.forEach((input) => {
+        input.addEventListener("input", (e) => {
+            let searchValue = e.target.value.toLowerCase().trim();
+            const dropdownMenu = input.closest(".dropdown-menu");
+
+            // Reset searchValue if dropdown menu is not visible
+            if (!dropdownMenu.classList.contains("show")) {
+                searchValue = "";
+            }
+
+            const dropdownItems = dropdownMenu.querySelectorAll(".dropdown-item");
+
+            dropdownItems.forEach((item) => {
+                const itemText = item.textContent.toLowerCase().trim();
+                const col = item.closest(".col");
+
+                if (searchValue === "" || itemText.startsWith(searchValue)) {
+                    col.style.display = "block";
+                } else {
+                    col.style.display = "none";
+                }
+            });
+        });
+    });
+}
+
 function displayTags() {
     const dropDownItems = document.querySelectorAll(".dropdown-item");
 
@@ -152,10 +181,7 @@ function displayTags() {
         item.addEventListener("click", (e) => {
             const tagText = item.textContent;
             const dropdownMenu = item.closest(".dropdown-menu");
-
-            // Debugging: Check if the class is added
-            console.log(item);
-            console.log("Item classes after add:", item.classList);
+            item.classList.add("selected");
 
             let tag;
 
@@ -171,21 +197,13 @@ function displayTags() {
                 const tagContainer = document.querySelector("#tags-container");
                 tagContainer.insertAdjacentHTML("beforeend", tag.renderTag());
                 tagsArray.push(tag);
-
-                // Add event listener to each tag to delete it
-                const tags = document.querySelectorAll(".tag");
-                tags.forEach((elem, index) => {
-                    elem.addEventListener("click", (e) => {
-                        e.stopPropagation();
-                        dropDownItems.forEach((item) => {
-                            if (item.textContent === e.target.textContent) {
-                                item.style.pointerEvents = "auto";
-                                item.style.opacity = "1";
-                            }
-                        });
-                        deleteTag(elem, index);
-                        searchRecipes(); // Update the search results when a tag is deleted
-                    });
+                
+                // Add event listener to the new tag to delete it
+                const newTagElement = tagContainer.lastElementChild;
+                newTagElement.addEventListener("click", () => {
+                    // Find the index of the tag in the tagsArray
+                    const index = tagsArray.findIndex(t => t.tagText === tag.tagText && t.type === tag.type);
+                    deleteTag(newTagElement, index, item);
                 });
             }
 
@@ -196,11 +214,15 @@ function displayTags() {
     return tagsArray;
 }
 
-function deleteTag(tagElement, index) {
-    tagsArray.splice(index, 1);
+function deleteTag(tagElement, index, dropdownItem) {
+    // Remove the selected class from the dropdown item
+    dropdownItem.classList.remove("selected");
+
+    // Remove the selected class from the  and tagsArray
     tagElement.remove();
+    tagsArray.splice(index, 1);
+
     searchRecipes(); // Update the search results when a tag is deleted
-    console.log(tagsArray);
 }
 
 async function init() {
@@ -211,6 +233,7 @@ async function init() {
     displayTags();
 
     searchInput.addEventListener("input", searchRecipes);
+    searchDropdownItems();
 };
 
 init();
