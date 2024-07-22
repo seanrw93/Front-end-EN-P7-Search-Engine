@@ -114,12 +114,38 @@ function searchRecipes() {
         filteredCards = filteredCards.filter((card) => {
             // Check for name match
             const nameWords = card.name.toLowerCase().split(" ");
-            const nameMatch = nameWords.some(word => word.startsWith(searchValue));
+            const nameMatch = nameWords.some((word, index) => {
+                if (word.startsWith(searchValue)) {
+                    return true;
+                }
+
+                // Check for match with sequence of adjacent words
+                const adjacentWords = nameWords.slice(index);
+                const match = adjacentWords.reduce((acc, curr) => {
+                    const phrase = acc + " " + curr;
+                    return phrase.startsWith(searchValue) ? phrase : acc;
+                });
+
+                return match.startsWith(searchValue);
+            });
 
             // Check for ingredient match
             const ingredientMatch = card.ingredients.some(ingredient => {
                 const ingredientWords = ingredient.ingredient.toLowerCase().split(" ");
-                return ingredientWords.some(word => word.startsWith(searchValue));
+                return ingredientWords.some((word, index) => {
+                    if (word.startsWith(searchValue)) {
+                        return true;
+                    }
+
+                    // Check for match with sequence of adjacent words
+                    const adjacentWords = ingredientWords.slice(index);
+                    const match = adjacentWords.reduce((acc, curr) => {
+                        const phrase = acc + " " + curr;
+                        return phrase.startsWith(searchValue) ? phrase : acc;
+                    });
+
+                    return match.startsWith(searchValue);
+                });
             });
 
             return nameMatch || ingredientMatch;
