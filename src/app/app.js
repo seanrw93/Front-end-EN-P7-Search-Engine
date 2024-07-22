@@ -105,41 +105,62 @@ function filterByTags(recipes, tagsArray) {
     });
 }
 
+
+
 function searchRecipes() {
     const searchValue = searchInput.value.toLowerCase();
 
-    let filteredCards = recipes;
-
+    let filteredCards = [];
     if (searchValue) {
-        filteredCards = filteredCards.filter((card) => {
-            // Check for name match
+        for (let i = 0; i < recipes.length; i++) {
+            const card = recipes[i];
             const nameWords = card.name.toLowerCase().split(" ");
-            const nameMatch = nameWords.some(word => word.startsWith(searchValue));
+            let nameMatch = false;
+            for (let j = 0; j < nameWords.length; j++) {
+                if (nameWords[j].startsWith(searchValue)) {
+                    nameMatch = true;
+                    break;
+                }
+            }
 
-            // Check for ingredient match
-            const ingredientMatch = card.ingredients.some(ingredient => {
-                const ingredientWords = ingredient.ingredient.toLowerCase().split(" ");
-                return ingredientWords.some(word => word.startsWith(searchValue));
-            });
+            let ingredientMatch = false;
+            if (!nameMatch) {
+                for (let j = 0; j < card.ingredients.length; j++) {
+                    const ingredientWords = card.ingredients[j].ingredient.toLowerCase().split(" ");
+                    for (let k = 0; k < ingredientWords.length; k++) {
+                        if (ingredientWords[k].startsWith(searchValue)) {
+                            ingredientMatch = true;
+                            break;
+                        }
+                    }
+                    if (ingredientMatch) {
+                        break;
+                    }
+                }
+            }
 
-            return nameMatch || ingredientMatch;
-        });
+            if (nameMatch || ingredientMatch) {
+                filteredCards.push(card);
+            }
+        }
+    } else {
+        filteredCards = recipes;
     }
 
     filteredCards = filterByTags(filteredCards, tagsArray);
 
     const dropdownItems = document.querySelectorAll(".dropdown-item");
     if (filteredCards.length === 0) {
-        dropdownItems.forEach((item) => {
-            item.classList.add("disabled-item");
+        for (let i = 0; i < dropdownItems.length; i++) {
+            dropdownItems[i].classList.add("disabled-item");
             searchInput.setAttribute("maxlength", searchInput.value.length);
-        });
+        }
         alert("No recipes found. Please try again.");
     } else {
-        dropdownItems.forEach((item) => {
-            item.classList.remove("disabled-item");
+        for (let i = 0; i < dropdownItems.length; i++) {
+            dropdownItems[i].classList.remove("disabled-item");
             searchInput.removeAttribute("maxlength");
-        });
+        }
     }
 
     displayCard(filteredCards);
