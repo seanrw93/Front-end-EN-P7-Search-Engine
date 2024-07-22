@@ -1,5 +1,6 @@
-@mixin dropdown-input-style($color) {
-    background: $color;
+@mixin dropdown-input-style() {
+    background-color: transparent;
+    color: $light;
     border: 0;
     border-bottom: 1px solid $light;
     border-radius: 0;
@@ -10,7 +11,7 @@
     }
 
     &:focus {
-        background: $color;
+        background-color: transparent;
         color: $light;
         border-bottom: 2px solid $light;
     }
@@ -20,4 +21,23 @@
     width: $width;
     min-width: $min-width; 
     max-width: $max-width;
+}
+
+@mixin custom-scrollbar($bg-color, $thumb-color) {
+        &::-webkit-scrollbar {
+            width: 8px;
+        }
+  
+        &::-webkit-scrollbar-track {
+            background: $bg-color;
+        }
+  
+      &::-webkit-scrollbar-thumb {
+        background-color: $thumb-color;
+        border-radius: 10px;
+      }
+  
+      &::-webkit-scrollbar-thumb:hover {
+        background-color: #555
+      }
 }

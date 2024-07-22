@@ -7,11 +7,38 @@
             font-weight: 900;
             color: #000;
             position: absolute;
-            top: 50%;
+            top: 60%;
             right: 10px;
             transform: translateY(-50%);
         }
 }
+
+.ipt-box {
+    margin: 0 auto;
+    width: 50%;
+
+    .outputList {
+        padding: 2rem;
+        width: 50%;
+        margin: auto;
+
+        & > li {
+            cursor: pointer;
+            list-style-type: none;    
+            padding: 0.5rem;
+            border: 1px solid $primary; 
+
+            &:hover {
+                background: $primary;
+                color: black;
+            }
+        }
+    }
+}
+
+.btn-success > span {
+    color: $light;
+  }
 
 .dropdown-toggle {
     &::after {
@@ -24,34 +51,110 @@
 
 
 .dropdown-menu {
+    transform: none !important;
+    overflow: hidden;
+
+    @media (min-height: 45vh) {
+        overflow-y: scroll;
+    }
+
+    @media (max-width: 388px) {
+        &#utensils-dropdown {
+            left: 0 !important;
+        }
+    }
+
+    @media (min-width: 389px) and (max-width: 768px) {
+        &#utensils-dropdown {
+            left: -230px !important;
+        }
+    }
+
     @media (max-width: 768px) {
-        &#dropdownMenu2 {
-            left: -124px
-        }
-        &#dropdownMenu3 {
-            left: -220px
+         &#devices-dropdown {
+            left: -128px !important;
         }
 
-        &.custom-dropdown-width {
+        &.custom-dropdown-dimensions {
             @include dropdown-width(90vw, 200px, 800px);
+            max-height: 50vh;
         }
-      }
+    }
+    
 
-      @media (min-width: 769px) {
-        &.custom-dropdown-width {
+    @media (min-width: 769px) {
+        &.custom-dropdown-dimensions {
             @include dropdown-width(60vw, 200px, 600px);
+            max-height: 60vh;
         }
-      }
+    }
+
+    &#dropdownMenu-ingredients {
+        &.custom-scrollbar {
+            @include custom-scrollbar(lighten($primary, 5%), darken($primary, 5%));
+        }
+    }
+
+    &#dropdownMenu-devices {
+        &.custom-scrollbar {
+            @include custom-scrollbar(lighten($success, 5%), darken($success, 5%));
+        }
+    }
+
+    &#dropdownMenu-utensils {
+        &.custom-scrollbar {
+            @include custom-scrollbar(lighten($danger, 5%), darken($danger, 5%));
+        }
+    }
+
+    .dropdown-item {
+        transition: font-weight 0.1s ease;
+
+        &:hover {
+            background-color: transparent;
+            text-decoration: underline;
+            color: #FFF !important;
+            font-weight: bold;
+        }
+
+        &.selected {
+            pointer-events: none;
+            opacity: 0.5;
+        }
+    }
 }
 
-.custom-input {
-    &--primary {
-        @include dropdown-input-style($primary);
-    }
-    &--success {
-        @include dropdown-input-style($success);
-    }
-    &--danger {
-        @include dropdown-input-style($danger);
+.search-input {
+    .custom-input {
+        @include dropdown-input-style();
     }
 }
+
+.extra-small {
+    font-size: 0.65rem;
+
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.recipe__card {
+    height: 345px;
+    max-width: 350px;
+    min-width: 320px;
+    margin: 0 auto;
+
+    .card-body {
+        & > .row:last-of-type {
+            & > .col:first-of-type {
+                flex: 2;
+            }
+            & > .col:last-of-type {
+                flex: 3;
+            }
+        }
+    }
+}
+
+  

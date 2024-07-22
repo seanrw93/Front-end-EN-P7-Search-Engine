@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./assets/icons/logo-favicon.ico" type="image/x-icon">
+    <!-- <link rel="stylesheet" href="../css/styles.css"> -->
+    <title>Les Petits Plats</title>
+</head>
+<body class="py-3 px-0">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-light">
+        <div class="container-xl d-flex justify-content-center">
+            <div class="row row-cols-1 w-100"> 
+                <!-- First Row: Logo -->
+                <div class="col d-flex justify-content-center">
+                    <a class="navbar-brand" href="#">
+                        <img class="img-fluid" src="./assets/images/logo.svg" alt="Logo">
+                    </a>
+                </div>
+                <!-- Second Row: Search Bar -->
+                <div class="col p-0 magnifying-glass-icon">
+                    <form class="w-100 ipt-box">
+                        <input id="search-recipe" type="text" class="form-control bg-secondary py-2 py-md-4 mt-2 mt-md-3" placeholder="Search an ingredient, device, ustensil or a recipe" aria-label="Search recipe">
+                        <!-- <ul class="outputList list-group mt-2"></ul> -->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+
+    <!-- Filters -->
+    <section class="container-xl my-md-4 my-3">
+
+        <!-- Filters: Tags -->
+        <div class="row row-cols-lg-2 px-3">
+            <div id="tags-container" class="col mb-md-2">
+                <!-- Tags generated here-->
+            </div>
+        </div>
+
+        <hr class="d-md-none mx-3" />
+
+        <!-- Filters: Dropdowns -->
+        <div class="row row-cols-1 px-3">
+            <div id="dropdowns" class="col">
+                <!-- Dropdown menus generated here-->
+            </div>
+        </div>      
+    </section>
+    
+    <!-- Dynamic recipe cards -->
+    <section class="container-xl mt-5 px-4">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3" id="recipe-row">
+            <!-- Recipe cards generated here-->
+        </div>
+    </section>
+
+    <script src="https://kit.fontawesome.com/c9fd0cd478.js" crossorigin="anonymous"></script>
+    <script async src="./bundle.js"></script>
+</body>
+</html>
