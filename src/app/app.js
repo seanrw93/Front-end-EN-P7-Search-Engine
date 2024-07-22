@@ -121,6 +121,20 @@ function searchRecipes() {
                     nameMatch = true;
                     break;
                 }
+
+                // Check for match with sequence of adjacent words
+                let phrase = nameWords[j];
+                for (let k = j + 1; k < nameWords.length; k++) {
+                    phrase += " " + nameWords[k];
+                    if (phrase.startsWith(searchValue)) {
+                        nameMatch = true;
+                        break;
+                    }
+                }
+
+                if (nameMatch) {
+                    break;
+                }
             }
 
             let ingredientMatch = false;
@@ -132,7 +146,22 @@ function searchRecipes() {
                             ingredientMatch = true;
                             break;
                         }
+
+                        // Check for match with sequence of adjacent words
+                        let phrase = ingredientWords[k];
+                        for (let l = k + 1; l < ingredientWords.length; l++) {
+                            phrase += " " + ingredientWords[l];
+                            if (phrase.startsWith(searchValue)) {
+                                ingredientMatch = true;
+                                break;
+                            }
+                        }
+
+                        if (ingredientMatch) {
+                            break;
+                        }
                     }
+
                     if (ingredientMatch) {
                         break;
                     }
