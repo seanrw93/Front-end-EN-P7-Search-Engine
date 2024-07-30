@@ -110,7 +110,8 @@ function searchRecipes() {
 
     let filteredCards = recipes;
 
-    if (searchValue) {
+    //Trigger search after 3 characters
+    if (searchValue.length >= 3) {
         filteredCards = filteredCards.filter((card) => {
             // Check for name match
             const nameWords = card.name.toLowerCase().split(" ");
@@ -160,6 +161,7 @@ function searchRecipes() {
             item.classList.add("disabled-item");
             searchInput.setAttribute("maxlength", searchInput.value.length);
         });
+        //Replace code below to update recipe list with text "No recipes found. Please try again."
         alert("No recipes found. Please try again.");
     } else {
         dropdownItems.forEach((item) => {
