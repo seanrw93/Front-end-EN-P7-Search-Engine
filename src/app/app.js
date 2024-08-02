@@ -105,51 +105,37 @@ function filterByTags(recipes, tagsArray) {
     });
 }
 
+function startsWithSearchValue(text, searchValue) {
+    const words = text.toLowerCase().split(" ");
+    return words.some((word, index) => {
+        if (word.startsWith(searchValue)) {
+            return true;
+        }
+
+        const adjacentWords = words.slice(index);
+        const match = adjacentWords.reduce((acc, curr) => {
+            const phrase = acc + " " + curr;
+            return phrase.startsWith(searchValue) ? phrase : acc;
+        });
+
+        return match.startsWith(searchValue);
+    });
+}
+
 function searchRecipes() {
     const searchValue = searchInput.value.toLowerCase();
-
     let filteredCards = recipes;
 
-    //Trigger search after 3 characters
+    // Trigger search after 3 characters
     if (searchValue.length >= 3) {
         filteredCards = filteredCards.filter((card) => {
-            // Check for name match
-            const nameWords = card.name.toLowerCase().split(" ");
-            const nameMatch = nameWords.some((word, index) => {
-                if (word.startsWith(searchValue)) {
-                    return true;
-                }
+            // Check for matches in different card properties
+            const nameMatch = startsWithSearchValue(card.name, searchValue);
+            const ingredientMatch = card.ingredients.some(ingredient => startsWithSearchValue(ingredient.ingredient, searchValue));
+            const deviceMatch = startsWithSearchValue(card.appliance, searchValue);
+            const utensilMatch = card.utensils.some(utensil => startsWithSearchValue(utensil, searchValue));
 
-                // Check for match with sequence of adjacent words
-                const adjacentWords = nameWords.slice(index);
-                const match = adjacentWords.reduce((acc, curr) => {
-                    const phrase = acc + " " + curr;
-                    return phrase.startsWith(searchValue) ? phrase : acc;
-                });
-
-                return match.startsWith(searchValue);
-            });
-
-            // Check for ingredient match
-            const ingredientMatch = card.ingredients.some(ingredient => {
-                const ingredientWords = ingredient.ingredient.toLowerCase().split(" ");
-                return ingredientWords.some((word, index) => {
-                    if (word.startsWith(searchValue)) {
-                        return true;
-                    }
-
-                    // Check for match with sequence of adjacent words
-                    const adjacentWords = ingredientWords.slice(index);
-                    const match = adjacentWords.reduce((acc, curr) => {
-                        const phrase = acc + " " + curr;
-                        return phrase.startsWith(searchValue) ? phrase : acc;
-                    });
-
-                    return match.startsWith(searchValue);
-                });
-            });
-
-            return nameMatch || ingredientMatch;
+            return nameMatch || ingredientMatch || deviceMatch || utensilMatch;
         });
     }
 
@@ -161,7 +147,6 @@ function searchRecipes() {
             item.classList.add("disabled-item");
             searchInput.setAttribute("maxlength", searchInput.value.length);
         });
-        //Replace code below to update recipe list with text "No recipes found. Please try again."
         alert("No recipes found. Please try again.");
     } else {
         dropdownItems.forEach((item) => {
@@ -172,6 +157,7 @@ function searchRecipes() {
 
     displayCard(filteredCards);
 }
+
 
 function searchDropdownItems() {
     const searchInputs = document.querySelectorAll(".dropdown-search");
