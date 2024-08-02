@@ -232,17 +232,19 @@ function searchRecipes() {
     filteredCards = filterByTags(filteredCards, tagsArray);
 
     const dropdownItems = document.querySelectorAll(".dropdown-item");
+    const errorAlert = document.getElementById('error-alert');
     if (filteredCards.length === 0) {
         for (let i = 0; i < dropdownItems.length; i++) {
-            dropdownItems[i].classList.add("disabled-item");
+            dropdownItems[i].classList.add("selected");
             searchInput.setAttribute("maxlength", searchInput.value.length);
         }
-        alert("No recipes found. Please try again.");
+        errorAlert.style.display = "block";
     } else {
         for (let i = 0; i < dropdownItems.length; i++) {
-            dropdownItems[i].classList.remove("disabled-item");
+            dropdownItems[i].classList.remove("selected");
             searchInput.removeAttribute("maxlength");
         }
+        errorAlert.style.display = "none";
     }
 
     displayCard(filteredCards);
@@ -253,6 +255,8 @@ function searchDropdownItems() {
 
     searchInputs.forEach((input) => {
         input.addEventListener("input", (e) => {
+            e.preventDefault();
+            
             let searchValue = e.target.value.toLowerCase().trim();
             const dropdownMenu = input.closest(".dropdown-menu");
 
