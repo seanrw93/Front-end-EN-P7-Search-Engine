@@ -109,11 +109,12 @@ function filterByTags(recipes, tagsArray) {
 
 function searchRecipes() {
     const searchValue = searchInput.value.toLowerCase();
-
     let filteredCards = [];
+
     if (searchValue.length >= 3) {
         for (let i = 0; i < recipes.length; i++) {
             const card = recipes[i];
+            
             const nameWords = card.name.toLowerCase().split(" ");
             let nameMatch = false;
             for (let j = 0; j < nameWords.length; j++) {
@@ -122,7 +123,6 @@ function searchRecipes() {
                     break;
                 }
 
-                // Check for match with sequence of adjacent words
                 let phrase = nameWords[j];
                 for (let k = j + 1; k < nameWords.length; k++) {
                     phrase += " " + nameWords[k];
@@ -147,7 +147,6 @@ function searchRecipes() {
                             break;
                         }
 
-                        // Check for match with sequence of adjacent words
                         let phrase = ingredientWords[k];
                         for (let l = k + 1; l < ingredientWords.length; l++) {
                             phrase += " " + ingredientWords[l];
@@ -168,7 +167,61 @@ function searchRecipes() {
                 }
             }
 
-            if (nameMatch || ingredientMatch) {
+            let deviceMatch = false;
+            if (!nameMatch && !ingredientMatch) {
+                const deviceWords = card.appliance.toLowerCase().split(" ");
+                for (let j = 0; j < deviceWords.length; j++) {
+                    if (deviceWords[j].startsWith(searchValue)) {
+                        deviceMatch = true;
+                        break;
+                    }
+
+                    let phrase = deviceWords[j];
+                    for (let k = j + 1; k < deviceWords.length; k++) {
+                        phrase += " " + deviceWords[k];
+                        if (phrase.startsWith(searchValue)) {
+                            deviceMatch = true;
+                            break;
+                        }
+                    }
+
+                    if (deviceMatch) {
+                        break;
+                    }
+                }
+            }
+
+            let utensilMatch = false;
+            if (!nameMatch && !ingredientMatch && !deviceMatch) {
+                for (let j = 0; j < card.utensils.length; j++) {
+                    const utensilWords = card.utensils[j].toLowerCase().split(" ");
+                    for (let k = 0; k < utensilWords.length; k++) {
+                        if (utensilWords[k].startsWith(searchValue)) {
+                            utensilMatch = true;
+                            break;
+                        }
+
+                        let phrase = utensilWords[k];
+                        for (let l = k + 1; l < utensilWords.length; l++) {
+                            phrase += " " + utensilWords[l];
+                            if (phrase.startsWith(searchValue)) {
+                                utensilMatch = true;
+                                break;
+                            }
+                        }
+
+                        if (utensilMatch) {
+                            break;
+                        }
+                    }
+
+                    if (utensilMatch) {
+                        break;
+                    }
+                }
+            }
+
+            if (nameMatch || ingredientMatch || deviceMatch || utensilMatch) {
                 filteredCards.push(card);
             }
         }
