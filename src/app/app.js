@@ -142,17 +142,19 @@ function searchRecipes() {
     filteredCards = filterByTags(filteredCards, tagsArray);
 
     const dropdownItems = document.querySelectorAll(".dropdown-item");
+    const errorAlert = document.querySelector("#error-alert");
     if (filteredCards.length === 0) {
         dropdownItems.forEach((item) => {
             item.classList.add("disabled-item");
             searchInput.setAttribute("maxlength", searchInput.value.length);
         });
-        alert("No recipes found. Please try again.");
+        errorAlert.style.display = "block";
     } else {
         dropdownItems.forEach((item) => {
             item.classList.remove("disabled-item");
             searchInput.removeAttribute("maxlength");
         });
+        errorAlert.style.display = "none"; 
     }
 
     displayCard(filteredCards);
