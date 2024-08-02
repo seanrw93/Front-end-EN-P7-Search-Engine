@@ -111,7 +111,7 @@ function searchRecipes() {
     const searchValue = searchInput.value.toLowerCase();
 
     let filteredCards = [];
-    if (searchValue) {
+    if (searchValue.length >= 3) {
         for (let i = 0; i < recipes.length; i++) {
             const card = recipes[i];
             const nameWords = card.name.toLowerCase().split(" ");
