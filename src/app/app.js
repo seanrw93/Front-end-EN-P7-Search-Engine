@@ -145,13 +145,13 @@ function searchRecipes() {
     const errorAlert = document.querySelector("#error-alert");
     if (filteredCards.length === 0) {
         dropdownItems.forEach((item) => {
-            item.classList.add("disabled-item");
+            item.classList.add("selected");
             searchInput.setAttribute("maxlength", searchInput.value.length);
         });
         errorAlert.style.display = "block";
     } else {
         dropdownItems.forEach((item) => {
-            item.classList.remove("disabled-item");
+            item.classList.remove("selected");
             searchInput.removeAttribute("maxlength");
         });
         errorAlert.style.display = "none"; 
