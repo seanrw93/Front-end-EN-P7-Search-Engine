@@ -89,19 +89,19 @@
         }
     }
 
-    &#dropdownMenu-ingredients {
+    &#ingredients-dropdown {
         &.custom-scrollbar {
             @include custom-scrollbar(lighten($primary, 5%), darken($primary, 5%));
         }
     }
 
-    &#dropdownMenu-devices {
+    &#devices-dropdown {
         &.custom-scrollbar {
             @include custom-scrollbar(lighten($success, 5%), darken($success, 5%));
         }
     }
 
-    &#dropdownMenu-utensils {
+    &#utensils-dropdown {
         &.custom-scrollbar {
             @include custom-scrollbar(lighten($danger, 5%), darken($danger, 5%));
         }
