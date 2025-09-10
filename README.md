@@ -4,6 +4,8 @@ A web application for searching recipes
 
 Project 7 of the OpenClassrooms Javascript Developer with React course
 
+See live demo [here]("https://seanrw93.github.io/Front-end-EN-P7-Search-Engine/")
+
 ## Prerequisites
 
 Ensure you have the following installed on your local machine:
